@@ -13,3 +13,19 @@
 // user.scss
 //
 // Place your own theme CSS or SCSS rules below this line, these rules will override any Bootstrap and theme variables.
+.gradient-text {
+    background: linear-gradient(
+        181.55deg,
+        rgba(255, 158, 158, 0.7) 3.21%,
+        rgba(255, 80, 237, 0.7) 68.35%,
+        rgba(210, 30, 255, 0.7) 98.68%,
+        rgba(255, 80, 237, 0.7) 98.69%
+    ),
+    #ffffff;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    &::selection {
+    -webkit-text-fill-color: var(--#{$prefix}emphasis-bg);
+    }
+}

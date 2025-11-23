@@ -28,6 +28,25 @@ mixin InsiderHero
         h1.fs-4.fs-md-2.text-light.display-1.mb-3 Investing is simple, but keeping it simple is extremely hard.
         span.badge.text-bg-secondary.fw-bold.mb-0.text-uppercase.fs-8.pt-2 Keep it Simple & Easy
 
+mixin InsiderHero2
+  section.position-relative.overflow-hidden.bg-gray-100 
+    .container-small
+      .row
+        div.align-items-start.align-items-center.justify-content-center
+          .col-12.p-0.p-md-5
+            h1.fs-5.fs-md-4.fs-xl-3.fw-black.mb-3 Investing is simple. Keeping it simple
+            h2.fs-6.fs-md-5.fs-xl-4.fw-black.mb-4.text-body-quaternary That's the challenge.
+            div.card.mb-5(style='width: 20rem;') 
+              div.card-header.p-3.py-1.text-bg-secondary.fw-bold.text-uppercase.fs-9(style='padding-top:0.5rem !important;') Just Follow The Money
+              div.card-body.p-2.px-3
+                .d-flex.flex-1
+                  span.d-flex
+                    .avatar.avatar-xl.me-3
+                      img.rounded-circle(src='assets/img/team/35.webp', alt='')
+                    .me-3.flex-1.mt-2
+                      h4.fs-9.mb-0 Roy Anderson
+                      span.fs-9 No complexity, no overthinking.
+
 mixin InsiderSubHero
   section.bg-body-emphasis.pt-0#insiders
     .container-small.px-lg-7
@@ -44,7 +63,7 @@ mixin InsiderSubHero
           p.fs-8.fw-bold.mb-4 Most investors are drowning in data. We do something radically simpler.
           div.alert.alert-subtle-primary We follow the people who actually know what's going on inside the business.
           p.fs-8.text-body-secondary.mb-3 When multiple senior executives quietly buy their own stock around the same time, they're acting on a level of understanding the public won't see for months.
-          span.badge.badge-phoenix.badge-phoenix-warning.fs-8.p-2(style='border:none;') That's our edge. That's where we hunt for opportunities.
+          span.badge.badge-phoenix.badge-phoenix-warning.fs-8.py-2(style='border:none; white-space:inherit; line-height:1.5;') That's our edge. That's where we hunt for opportunities.
           div.border-bottom.border-dashed.mb-5 &nbsp;
           h5.fw-bold.mb-2.text-body-emphasis The Big Idea
           p.fs-8.text-body-secondary.mb-3 Instead of trying to decode every headline and chart pattern, we track when the best-informed people inside the company are all quietly buying the same stock at the same time. When the people closest to the truth are lining up on one side of the trade… you at least want to know why.
@@ -89,6 +108,7 @@ mixin InsiderSubHero
               hr.my-4
               p.text-body-secondary.fs-9.mb-2 When conviction, allocation size, and timing spike together, we push an alert to the desk and clients immediately.
               small.text-body-tertiary.fs-10 Data sourced from SEC Form 4 filings & our automated list monitoring.
+
     #insiderSubHeroModal.modal.fade(tabindex='-1' aria-labelledby='insiderSubHeroModalLabel' aria-hidden='true')
       .modal-dialog.modal-dialog-centered.modal-lg
         .modal-content
