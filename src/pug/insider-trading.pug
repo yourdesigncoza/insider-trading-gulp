@@ -1,0 +1,21 @@
+extends layouts/LayoutTheme
+include mixins/pages/insider/index
+include mixins/landing/common/Navbar
+
+append variables
+  - var attrsBody = { style: "--phoenix-scroll-margin-top: 1.25rem;"};
+  - var disableNavigationType = false;
+  - var disableVerticalNavbarAppearance = true;
+  - var disableHorizontalNavbarShape = false;
+  - var disableHorizontalNavbarAppearance = false;
+
+block mainContent
+  +InsiderNavbar
+  +InsiderHero
+  +InsiderSubHero
+  +InsiderStatsStrip
+  +InsiderSignalFeed
+  +InsiderMethodology
+  +InsiderProductModules
+  +InsiderTestimonial
+  +InsiderPricingCTA

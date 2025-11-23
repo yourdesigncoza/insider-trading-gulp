@@ -1,0 +1,348 @@
+mixin InsiderNavbar
+  header.bg-body-emphasis.sticky-top(data-navbar-shadow-on-scroll)
+    nav.navbar.navbar-expand-lg.container-small.px-3.px-lg-6.px-xxl-3
+      a.navbar-brand.flex-1.flex-lg-grow-0(href='#top')
+        +Logo
+      button.navbar-toggler(type='button', data-bs-toggle='collapse', data-bs-target='#insiderNavbar', aria-controls='insiderNavbar', aria-expanded='false', aria-label='Toggle navigation')
+        span.navbar-toggler-icon
+      .collapse.navbar-collapse#insiderNavbar
+        ul.navbar-nav.me-auto.mb-3.mb-lg-0
+          - var links = [{label:'Signals', href:'#signals'},{label:'Conviction Model', href:'#method'},{label:'Product', href:'#product'},{label:'Pricing', href:'#pricing'}];
+          each link, index in links
+            li.nav-item.border-bottom.border-translucent.border-bottom-lg-0
+              a.nav-link.lh-1.py-0.fs-9.fw-bold.py-3(href=link.href, class=index === 0 ? 'active' : '')= link.label
+
+            li.nav-item
+          .d-grid.d-lg-flex.align-items-center
+            div.nav-item.d-flex.align-items-center.d-none.d-lg-block.pe-2
+              +ToggleThemeBtn('themeControlToggle').px-2
+            a.btn.btn-link.text-body.order-1.order-lg-0.ps-4.me-lg-2(href=`${CWD}${paths['simple-signin']}`) Sign in
+            a.btn.btn-phoenix-primary.order-0(href=`${CWD}${paths['simple-signup']}`)
+              span.fw-bold Sign up
+
+mixin InsiderHero
+  section.position-relative.overflow-hidden.bg-body-emphasis.pt-0
+    img.w-100(src=`${CWD}assets/img/insider-trading/modern-office.png`, alt='Futuristic Dashboard', style='object-fit: cover; height:60vh;')
+    .position-absolute.top-0.start-0.w-100.h-100.d-flex.align-items-start.align-items-center.justify-content-center
+      .col-11.col-sm-10.col-md-8.col-lg-6.text-white.mb-10(style='background: rgb(189 98 97 / 65%);text-shadow: 0 2px 2px rgb(0 0 0 / 26%); padding:2rem;') 
+        h1.fs-4.fs-md-2.text-light.display-1.mb-3 Investing is simple, but keeping it simple is extremely hard.
+        span.badge.text-bg-secondary.fw-bold.mb-0.text-uppercase.fs-8.pt-2 Keep it Simple & Easy
+
+mixin InsiderSubHero
+  section.bg-body-emphasis.pt-0#insiders
+    .container-small.px-lg-7
+      .row.g-6
+        div
+          span.badge.bg-primary-subtle.text-primary.fw-bold.mb-3.text-uppercase.fs-9 Tracking legal insider disclosures
+          h2.mb-5 Follow the Corporate Smart Money
+      .row.g-6
+        .col-lg-6
+          p.fs-7.text-body-secondary.mb-5.font-monospace When a company's 
+            span.badge.badge-phoenix.badge-phoenix-success.fw-semibold(style='border:none;') CFO, COO, and General Counsel
+            |  all start buying stock with their own money at the same time, they're not guessing. They know something the market doesn't know ~ 
+            span.badge.badge-phoenix.badge-phoenix-warning.fw-semibold(style='border:none;') YET!
+          p.fs-8.fw-bold.mb-4 Most investors are drowning in data. We do something radically simpler.
+          div.alert.alert-subtle-primary We follow the people who actually know what's going on inside the business.
+          p.fs-8.text-body-secondary.mb-3 When multiple senior executives quietly buy their own stock around the same time, they're acting on a level of understanding the public won't see for months.
+          span.badge.badge-phoenix.badge-phoenix-warning.fs-8.p-2(style='border:none;') That's our edge. That's where we hunt for opportunities.
+          div.border-bottom.border-dashed.mb-5 &nbsp;
+          h5.fw-bold.mb-2.text-body-emphasis The Big Idea
+          p.fs-8.text-body-secondary.mb-3 Instead of trying to decode every headline and chart pattern, we track when the best-informed people inside the company are all quietly buying the same stock at the same time. When the people closest to the truth are lining up on one side of the trade… you at least want to know why.
+          button.btn.btn-outline-primary.btn-lg.rounded-pill(type='button' data-bs-toggle='modal' data-bs-target='#insiderSubHeroModal') Read how we track insider cluster buying
+        .col-lg-6
+          .card.shadow-sm
+            .card-body.p-4
+              span.badge.bg-body-secondary.text-body-secondary.text-uppercase.fs-10.mb-3 Real example • March 2025
+              h5.fw-bold.mb-2.text-body-emphasis Cluster buy: Mid-cap tech
+              p.text-body-secondary.fs-8.mb-4 Three execs disclosed $1.8M in stock purchases over 11 days while the tape was flat at $52.
+              .d-flex.align-items-center.gap-4.flex-column.flex-sm-row
+                .position-relative.mx-sm-0.mx-auto(style='width:140px;height:140px;')
+                  svg(width='140', height='140', viewBox='0 0 36 36')
+                    circle(cx='18', cy='18', r='16', fill='none', stroke='#e1e5ea', 'stroke-width'='1', opacity='.8')
+                    circle(cx='18', cy='18', r='16', fill='none', stroke='currentColor', 'stroke-width'='2', 'stroke-dasharray'='92 100', transform='rotate(-90 18 18)', 'stroke-linecap'='round', class='text-primary')
+                  .position-absolute.top-50.start-50.translate-middle.text-center
+                    small.text-uppercase.text-body-tertiary.fs-10 Conviction
+                    h3.fw-black.mb-0 92/100
+                    span.text-success.fs-10 Alignment score
+                .flex-1
+                  ul.list-unstyled.mb-0
+                    li.d-flex.align-items-center.mb-1
+                      span.fa-solid.fa-user-tie.text-primary.me-2
+                      span.text-body-secondary.fs-9 3 senior officers, 11-day window
+                    li.d-flex.align-items-center.mb-1
+                      span.fa-solid.fa-layer-group.text-warning.me-2
+                      span.text-body-secondary.fs-9 Cluster size cleared compliance flags
+                    li.d-flex.align-items-center
+                      span.fa-solid.fa-clock-rotate-left.text-success.me-2
+                      span.text-body-secondary.fs-9 Disseminated &lt;15 minutes after Form 4
+              .row.text-center.mt-4.gx-2
+                .col-4
+                  small.text-uppercase.text-body-tertiary.fs-10 We Bought @
+                  p.fw-semibold.mb-0 $52
+                .col-4
+                  small.text-uppercase.text-body-tertiary.fs-10 We Sold At @
+                  p.fw-semibold.text-success.mb-0 $74
+                .col-4
+                  small.text-uppercase.text-body-tertiary.fs-10 Gain
+                  p.fw-semibold.text-success.mb-0 42% (2 Months)
+              .row.text-center.mt-3.gx-2
+              hr.my-4
+              p.text-body-secondary.fs-9.mb-2 When conviction, allocation size, and timing spike together, we push an alert to the desk and clients immediately.
+              small.text-body-tertiary.fs-10 Data sourced from SEC Form 4 filings & our automated list monitoring.
+    #insiderSubHeroModal.modal.fade(tabindex='-1' aria-labelledby='insiderSubHeroModalLabel' aria-hidden='true')
+      .modal-dialog.modal-dialog-centered.modal-lg
+        .modal-content
+          .modal-header.border-0.pb-0
+            h4#insiderSubHeroModalLabel.fw-black.mb-0 Follow the Corporate Smart Money
+            button.btn-close(type='button' data-bs-dismiss='modal' aria-label='Close')
+          .modal-body.py-4
+            span.badge.bg-warning-subtle.text-warning.text-uppercase.fs-10.mb-3 Deep dive
+            h4.mb-4 Why Insider “Cluster Buying” Changes Everything
+            p.text-body-secondary.mb-3 Insiders sell for taxes, tuition, or diversification. They only buy for one reason: they believe the price is going up. When multiple leaders step in together, that's the market's purest conviction signal.
+            .bg-body-secondary.rounded-3.p-3.mb-4
+              p.text-body-secondary.fw-semibold.mb-1 Clustered buying means:
+              ul.list-unstyled.mb-0.fs-8
+                li.d-flex.mb-2
+                  span.fa-solid.fa-users.text-primary.me-2.mt-1
+                  span Multiple informed insiders agree the stock is undervalued
+                li.d-flex.mb-2
+                  span.fa-solid.fa-hand-holding-dollar.text-success.me-2.mt-1
+                  span They're risking their own money, not just talking on CNBC
+                li.d-flex
+                  span.fa-solid.fa-clock.text-warning.me-2.mt-1
+                  span They're moving before the news breaks
+            p.text-body-secondary.mb-4 We ignore the noise and zero in on these clusters.
+            h4.mb-4 The Executives We Watch Closely
+              h5.mb-2 🧮 Chief Financial Officer (CFO)
+              p Lives in cash flow, debt ratios, margins, forecasts.
+              ul
+                li Stronger signal than the CEO, less political pressure
+                li Knows what the business is really worth
+                li When they buy: “I've seen the books. This is cheap.”
+              h5.mb-2 ⚙️ COO & Senior Vice Presidents
+              p Operate the business day to day and see issues in real time.</br> When they buy alongside the CFO, conviction multiplies.
+              h5.mb-2 ⚖️ General Counsel
+              p Risk-averse, deeply aware of legal landmines.</br> When the company's lawyer buys, the upside is worth it.
+              h5.mb-2 👥 Directors
+              p Experienced, well-connected oversight. Multiple directors buying together adds serious weight.
+            hr
+            h4.mb-4 What We Ignore vs. What We Hunt
+            .row.g-3.mb-4
+              .col-md-6
+                .border.border-danger-subtle.rounded-3.p-3.h-100
+                  span.badge.bg-danger-subtle.text-danger.text-uppercase.fs-10.mb-2 ❌ Ignore
+                  ul.list-unstyled.fs-8.text-body-secondary.mb-0
+                    li CEO photo-op buys
+                    li Automatic 401(k) contributions
+                    li Token $10K purchases
+                    li Routine option exercises
+              .col-md-6
+                .border.border-success-subtle.rounded-3.p-3.h-100
+                  span.badge.bg-success-subtle.text-success.text-uppercase.fs-10.mb-2 ✅ Hunt
+                  ul.list-unstyled.fs-8.text-body-secondary.mb-0
+                    li Multiple key executives (CFO, COO, VPs, counsel, directors)
+                    li Meaningful dollar amounts
+                    li Purchases within days or weeks (the cluster)
+            h4.mb-4 Ready to Follow the Smart Money?
+            p By the time cluster buying hits mainstream media, the easy gains are gone. Our subscribers see the signals while they're still fresh while insiders are still loading up, not after everyone's talking about it.
+          .modal-footer.border-0.pt-0
+            button.btn.btn-outline-secondary(type='button' data-bs-dismiss='modal') Close
+
+mixin InsiderStatsStrip
+  section.py-6.py-lg-7
+    .container-small.px-lg-7
+     row
+      .col-12.col-lg-6
+        p Since 2017, our proven methodology has consistently delivered exceptional market-beating returns. We've achieved annual returns as high as 140.9% on stock trades alone—and that's across the entire portfolio, not even counting our options strategies.<br />This approach represents a genuine edge in the investment world. If you're looking to significantly outperform the market and identify explosive growth opportunities, this methodology has the track record to back it up.
+        .row.g-3
+          - var stats = [{ title: '140.9%', subtitle: 'Best performing year.' }, { title: '75% in 30 days', subtitle: 'Fastest rally after disclosure' }, { title: '2 months', subtitle: 'Average hold period' }];
+          each stat in stats
+            .col-md-4
+              .card.h-100.border-0.shadow-sm
+                .card-body
+                  h3.fw-black.mb-3= stat.title
+                  p.text-body-secondary.mb-0= stat.subtitle
+          .col-12.col-lg-6
+            .row.g-4
+              - var corporateSignals = [{ ticker: 'MDB', insider: 'CEO Dev Ittycheria', value: '$3.2M', conviction: 'High', color: 'success', catalyst: 'AI expansion', upside: '+38%' }, { ticker: 'ASML', insider: 'VP Finance', value: '$1.8M', conviction: 'Elevated', color: 'primary', catalyst: 'Export clarity', upside: '+24%' }, { ticker: 'PANW', insider: 'Director Arora', value: '$950K', conviction: 'Watch', color: 'warning', catalyst: 'Billings inflection', upside: '+19%' }];
+              - var capitolSignals = [{ ticker: 'MSFT', insider: 'Rep. Khanna', value: '$450K', conviction: 'Filed 2d', color: 'info', catalyst: 'AI hearings', upside: '+17%' }, { ticker: 'META', insider: 'Sen. Tuberville', value: '$260K', conviction: 'Delayed', color: 'warning', catalyst: 'Policy tailwind', upside: '+14%' }, { ticker: 'V', insider: 'Rep. Pelosi', value: '$500K', conviction: 'High', color: 'success', catalyst: 'Spend resilience', upside: '+11%' }];
+              .col-12
+                .card.shadow-sm
+                  .card-header.border-0.pb-0
+                    h5.mb-1 Corporate smart money
+                    p.text-body-tertiary.fs-10.mb-0 Example cluster buy list
+                  .card-body
+                    table.table.table-sm.align-middle.mb-0
+                      thead
+                        tr
+                          th.text-body-secondary.fw-semibold.fs-10.text-uppercase(scope='col') Ticker
+                          th.text-body-secondary.fw-semibold.fs-10.text-uppercase(scope='col') Insider
+                          th.text-body-secondary.fw-semibold.fs-10.text-uppercase(scope='col') Allocation
+                          th.text-body-secondary.fw-semibold.fs-10.text-uppercase(scope='col') Conviction
+                          th.text-body-secondary.fw-semibold.fs-10.text-uppercase.text-end(scope='col') Upside
+                      tbody
+                        each row in corporateSignals
+                          tr
+                            td.fw-semibold #{row.ticker}
+                            td.text-body-tertiary #{row.insider}
+                            td #{row.value}
+                            td
+                              span.badge(class='bg-' + row.color + '-subtle text-' + row.color)= row.conviction
+                              span.d-block.fs-10.text-body-tertiary #{row.catalyst}
+                            td.text-end
+                              span.text-success.fw-bold #{row.upside}
+
+
+
+mixin InsiderSignalFeed
+  section.py-7#signals
+    .container-small.px-lg-7
+      .row.justify-content-between.align-items-start.g-5
+        .col-12.col-lg-5
+          span.badge.bg-primary-subtle.text-primary.text-uppercase.fw-bold.fs-10.mb-3 Conviction feed
+          h2.fw-black.mb-3 Corporate
+      .row.justify-content-between.align-items-start.g-5
+        .col-12.col-lg-5
+          p.text-body-secondary.mb-4 We synthesise SEC Form 4 filings with STOCK Act disclosures, calculate conviction, and surface the exact entries insiders cannot ignore.
+          ul.list-unstyled.mb-4
+            li.d-flex.mb-2
+              span.fa-solid.fa-bolt.text-warning.me-2.mt-1
+              p.flex-1.mb-0 Alerts trigger when cluster buying, allocation size, and velocity align.
+            li.d-flex.mb-2
+              span.fa-solid.fa-shield-check.text-success.me-2.mt-1
+              p.flex-1.mb-0 Compliance-first workflow with audit trails and instructive notes.
+            li.d-flex
+              span.fa-solid.fa-chart-line.text-primary.me-2.mt-1
+              p.flex-1.mb-0 Sentiment overlays for rate moves, ETF flows, and macro catalysts.
+        .col-12.col-lg-7
+          .row.g-4
+            - var corporateSignals = [{ ticker: 'MDB', insider: 'CEO Dev Ittycheria', value: '$3.2M', conviction: 'High', color: 'success', catalyst: 'AI expansion', upside: '+38%' }, { ticker: 'ASML', insider: 'VP Finance', value: '$1.8M', conviction: 'Elevated', color: 'primary', catalyst: 'Export clarity', upside: '+24%' }, { ticker: 'PANW', insider: 'Director Arora', value: '$950K', conviction: 'Watch', color: 'warning', catalyst: 'Billings inflection', upside: '+19%' }];
+            - var capitolSignals = [{ ticker: 'MSFT', insider: 'Rep. Khanna', value: '$450K', conviction: 'Filed 2d', color: 'info', catalyst: 'AI hearings', upside: '+17%' }, { ticker: 'META', insider: 'Sen. Tuberville', value: '$260K', conviction: 'Delayed', color: 'warning', catalyst: 'Policy tailwind', upside: '+14%' }, { ticker: 'V', insider: 'Rep. Pelosi', value: '$500K', conviction: 'High', color: 'success', catalyst: 'Spend resilience', upside: '+11%' }];
+            .col-12
+              .card.shadow-sm
+                .card-header.border-0.pb-0
+                  h5.mb-1 Corporate smart money
+                  p.text-body-tertiary.fs-10.mb-0 Example cluster buy list
+                .card-body
+                  table.table.table-sm.align-middle.mb-0
+                    thead
+                      tr
+                        th.text-body-secondary.fw-semibold.fs-10.text-uppercase(scope='col') Ticker
+                        th.text-body-secondary.fw-semibold.fs-10.text-uppercase(scope='col') Insider
+                        th.text-body-secondary.fw-semibold.fs-10.text-uppercase(scope='col') Allocation
+                        th.text-body-secondary.fw-semibold.fs-10.text-uppercase(scope='col') Conviction
+                        th.text-body-secondary.fw-semibold.fs-10.text-uppercase.text-end(scope='col') Upside
+                    tbody
+                      each row in corporateSignals
+                        tr
+                          td.fw-semibold #{row.ticker}
+                          td.text-body-tertiary #{row.insider}
+                          td #{row.value}
+                          td
+                            span.badge(class='bg-' + row.color + '-subtle text-' + row.color)= row.conviction
+                            span.d-block.fs-10.text-body-tertiary #{row.catalyst}
+                          td.text-end
+                            span.text-success.fw-bold #{row.upside}
+
+mixin InsiderMethodology
+  section.py-7.bg-body-emphasis#method
+    .container-small.px-lg-7
+      .row.g-5.align-items-center
+        .col-lg-5
+          span.badge.bg-info-subtle.text-info.text-uppercase.fs-10.fw-bold.mb-3 Process
+          h2.fw-black.mb-3 The conviction engine
+          p.text-body-secondary.mb-4 We only surface trades insiders are willing to file. Every alert passes three filters so you inherit their asymmetric information edge without crossing any compliance lines.
+          a.btn.btn-link.text-decoration-none.ps-0(href='#signals')
+            span.fw-bold View live tape
+            span.fa-solid.fa-arrow-right.ms-2
+        .col-lg-7
+          - var steps = [{ title: 'Surface disclosures', desc: 'Ingest SEC Form 4 & Congressional filings in near real time, normalize entities, and classify purchase vs. sale vs. derivative.', icon: 'download-cloud' }, { title: 'Score conviction', desc: 'Assign insider buying score using allocation size, cluster breadth, historical accuracy, and macro overlays.', icon: 'activity' }, { title: 'Deliver swing-ready alerts', desc: 'Publish entry, rationale, and management plan built for two-month average holds.', icon: 'zap' }];
+          .border-start.border-primary-subtle.ps-4
+            each step, idx in steps
+              .mb-5
+                .d-flex.align-items-center.mb-3
+                  .rounded-circle.bg-primary-subtle.text-primary.d-flex.align-items-center.justify-content-center.me-3(style='width: 40px; height: 40px;')
+                    span(data-feather=step.icon)
+                  div
+                    p.text-body-tertiary.text-uppercase.fs-10.mb-1 Step #{idx + 1}
+                    h5.mb-0.fw-semibold= step.title
+                p.text-body-secondary.mb-0= step.desc
+
+mixin InsiderProductModules
+  section.py-7#product
+    .container
+      .row.justify-content-center.mb-5
+        .col-lg-8.text-center
+          span.badge.bg-success-subtle.text-success.text-uppercase.fs-10.fw-bold.mb-3 Platform
+          h2.fw-black.mb-3 Built for decisive investors
+          p.text-body-secondary.mb-0 Every module originates from Phoenix components, so extending dashboards or automations stays effortless inside your stack.
+      .row.g-4
+        - var modules = [{ title: 'Insider Heatmap', desc: 'Visualize flow by sector, conviction score, and allocation velocity. Filter down to the exact pockets of smart money accumulation.', icon: 'grid' }, { title: 'AI anomaly layer', desc: 'Machine-learned baselines raise flags when insider behavior deviates from historical norms perfect for spotting stealth campaigns.', icon: 'cpu' }, { title: 'Managed concierge', desc: 'Prefer a white-glove experience? Let our desk execute the trades, manage risk, and deliver weekly attribution briefings.', icon: 'user-check' }];
+        each module in modules
+          .col-md-4
+            .card.h-100.shadow-sm
+              .card-body
+                span.badge.bg-body-secondary.text-body-tertiary.rounded-pill.fs-10.mb-3
+                  span(data-feather=module.icon class='me-1')
+                  | #{module.title}
+                p.text-body-secondary.mb-0= module.desc
+
+mixin InsiderTestimonial
+  section.py-7.bg-body-secondary
+    .container
+      .row.g-5.align-items-center
+        .col-lg-6
+          .card.shadow-lg.border-0
+            .card-body.p-5
+              span.fa-solid.fa-quote-left.text-warning.fs-2.mb-3
+              p.fs-5.fw-semibold.mb-4 “The March 2020 shopping list you sent called the exact bottom. We captured 74% in six weeks following CFO cluster buys.”
+              p.text-body-secondary.mb-0
+                span.fw-semibold Marcus L.
+                | , Family Office PM
+        .col-lg-6
+          h3.fw-black.mb-3 We win when insiders win.
+          p.text-body-secondary.mb-4 During crisis moments insiders allocate personal capital with eerie precision. We package those signals with context, risk bands, and automation-ready data so you can deploy confidence, not guesswork.
+          ul.list-unstyled
+            li.d-flex.mb-3
+              span.fa-solid.fa-check.text-success.me-2.mt-1
+              p.flex-1.mb-0 COVID bottom tracker (cluster buys) signaled +300% runs.
+            li.d-flex.mb-3
+              span.fa-solid.fa-check.text-success.me-2.mt-1
+              p.flex-1.mb-0 Ready-to-ship Phoenix components charts, tiles, accordions—power each section.
+            li.d-flex
+              span.fa-solid.fa-check.text-success.me-2.mt-1
+              p.flex-1.mb-0 SOC 2 aligned data handling & logging for peace of mind.
+
+mixin InsiderPricingCTA
+  section.py-7#pricing
+    .container-small.px-lg-7.px-xxl-3
+      .row.g-4
+        .col-lg-7
+          .card.shadow-lg.border-0.h-100
+            .card-body.p-5
+              span.badge.bg-danger-subtle.text-danger.text-uppercase.fs-10.fw-bold.mb-3 Pricing
+              h2.fw-black.mb-3 $100 <span class='fs-5 text-body-secondary fw-normal'>per month</span>
+              p.text-body-secondary.mb-4 Single, all-inclusive subscription built for opportunistic swing traders.
+              ul.list-unstyled.mb-4
+                - var benefits = ['Unlimited insider & capitol trade alerts', 'Conviction scoring dashboard + CSV/API export', 'Live strategy calls every Monday', 'Managed-account upgrade pathway'];
+                each benefit in benefits
+                  li.d-flex.mb-2
+                    span.fa-solid.fa-circle-check.text-success.me-2.mt-1
+                    p.flex-1.mb-0= benefit
+              .d-flex.flex-column.flex-md-row.gap-3
+                a.btn.btn-lg.btn-primary.rounded-pill.flex-1(href='#top') Start subscription
+                a.btn.btn-outline-secondary.btn-lg.rounded-pill.flex-1(href='#product') Explore product tour
+        .col-lg-5
+          .card.h-100.bg-body-emphasis.border-0
+            .card-body.p-5
+              h4.fw-semibold.mb-2 Managed account
+              p.text-body-secondary.mb-4 Let our desk execute, monitor, and debrief every insider-backed trade for you.
+              dl.row
+                dt.col-5.text-body-tertiary.fs-10.text-uppercase Seats open
+                dd.col-7.fw-bold 07 of 25
+                dt.col-5.text-body-tertiary.fs-10.text-uppercase Min account
+                dd.col-7.fw-bold $250K
+              p.text-body-secondary.mb-4 Includes concierge risk reviews, trade journaling, and on-demand attribution decks.
+              a.btn.btn-link.text-decoration-none.px-0(href='mailto:hello@insiderdesk.com')
+                span.fw-bold Book a strategy call
+                span.fa-solid.fa-arrow-right.ms-2
