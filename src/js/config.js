@@ -16,10 +16,10 @@ const configQueryMap = {
 
 const initialConfig = {
   phoenixIsNavbarVerticalCollapsed: false,
-  phoenixTheme: 'light',
-  phoenixNavbarTopStyle: 'default',
+  phoenixTheme: 'dark',
+  phoenixNavbarTopStyle: 'dark',
   phoenixNavbarVerticalStyle: 'default',
-  phoenixNavbarPosition: 'vertical',
+  phoenixNavbarPosition: 'horizontal',
   phoenixNavbarTopShape: 'default',
   phoenixIsRTL: false,
   phoenixSupportChat: true
@@ -42,6 +42,13 @@ const resetConfig = () => {
     localStorage.setItem(key, initialConfig[key]);
   });
 };
+
+const CONFIG_VERSION = 'phoenix-config-v1-dark-default';
+const storedConfigVersion = localStorage.getItem('phoenix-config-version');
+if (storedConfigVersion !== CONFIG_VERSION) {
+  resetConfig();
+  localStorage.setItem('phoenix-config-version', CONFIG_VERSION);
+}
 
 const urlSearchParams = new URLSearchParams(window.location.search);
 const params = Object.fromEntries(urlSearchParams.entries());

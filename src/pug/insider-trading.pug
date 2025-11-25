@@ -3,25 +3,17 @@ include mixins/pages/insider/index
 include mixins/landing/common/Navbar
 
 append variables
-  - var attrsBody = { style: "--phoenix-scroll-margin-top: 1.25rem;"};
-  - var disableNavigationType = false;
+  - var attrsBody = { style: "--phoenix-scroll-margin-top: 1.2rem;"};
+  - var disableNavigationType = true;
   - var disableVerticalNavbarAppearance = true;
-  - var disableHorizontalNavbarShape = false;
-  - var disableHorizontalNavbarAppearance = false;
+  - var disableHorizontalNavbarShape = true;
+  - var disableHorizontalNavbarAppearance = true;
 
 block mainContent
   +InsiderNavbar
-  //- +InsiderHero
   +InsiderHeroHook
   +InsiderSubHero
   +InsiderHero2
-  +InsiderPerformanceSignals
-  +InsiderStatsStrip
-  +InsiderSignalFeed
-  //- +InsiderMethodology
-  //- +InsiderProductModules
-  //- +InsiderTestimonial
-  //- +InsiderPricingCTA
   +InsiderWhyItWorks
   +InsiderOurEdge
   +InsiderWhyFree
