@@ -292,104 +292,235 @@ mixin InsiderOurEdge
 mixin InsiderWhyFree
 	section.bg-body-emphasis.py-7.py-lg-8
 		.container-small.px-lg-7
-			.row.justify-content-center
-				.col-lg-10
-					.text-center.mb-5
-						span.badge.bg-info-subtle.text-info.text-uppercase.fw-bold.fs-10.mb-3 Our Philosophy
-						h2.fw-black.mb-3 Why It's Free (And Still Serious)
-					.card.shadow-lg.border-0
-						.card-body.p-5
-							.row.g-5.align-items-center
-								.col-lg-6
-									.d-flex.align-items-start.mb-4
-										span.fa-solid.fa-unlock.text-success.fs-2.me-3.mt-1
-										div
-											h5.fw-bold.mb-2 No Paywalls
-											p.text-body-secondary.mb-0 Most insider-signal services hide behind expensive paywalls or bundle the ideas with other products you don't need.
-									.d-flex.align-items-start
-										span.fa-solid.fa-bullseye.text-primary.fs-2.me-3.mt-1
-										div
-											h5.fw-bold.mb-2 Focus on What Matters
-											p.text-body-secondary.mb-0 We keep it free so you can focus on implementation, risk management, and fit with your own style - not subscription overhead.
-								.col-lg-6
-									.bg-warning-subtle.rounded-3.p-4
-										h5.fw-bold.text-warning.mb-3 In return, we ask one thing:
-										p.text-body-secondary.mb-3 Treat these ideas like a professional tool, not a lottery ticket.
-										ul.list-unstyled.mb-0
-											li.d-flex.mb-2
-												span.fa-solid.fa-check.text-success.me-2.mt-1
-												span Use proper sizing
-											li.d-flex.mb-2
-												span.fa-solid.fa-check.text-success.me-2.mt-1
-												span Set stops
-											li.d-flex
-												span.fa-solid.fa-check.text-success.me-2.mt-1
-												span Understand the typical two-month swing-trade horizon
+			.row.mb-5
+				.col-12
+					span.badge.bg-primary-subtle.text-primary.fw-bold.mb-3.text-uppercase.fs-9 No Catch
+					h2.fw-black.mb-4 My Trade Ideas for Free
+					p.fs-7.text-body-secondary.mb-0 The only reason this service exists at no cost is because of AI.
+			.row.mb-5
+				.col-12.col-lg-6
+					p.fs-8.text-body-secondary.mb-4 Here's the reality: if you're monitoring Form 4 filings and looking only at US "P" (purchase) codes, you're dealing with around 45,000-50,000 insider trades per year. Obviously, you'd never want to act on all of them.
 
-mixin InsiderBenefits
+					h4.fw-bold.mb-3 The filtering process breaks down like this:
+					p.fs-8.text-body-secondary.mb-4 After applying sensible filters for buys only, officers and directors, clustered purchases, meaningful size relative to salary, and excluding automated 10b5-1 plans you're left with dozens to a few hundred potentially actionable trades per year, depending on how strict your criteria are.
+
+					.alert.alert-subtle-primary.fw-semibold.text-center(style='border:none;') That's where AI changes everything.
+
+					p.fs-8.text-body-secondary.mb-4 What used to require a team of full-time analysts can now be handled by a lean, automated AI research stack. I've developed and continue to maintain proprietary AI models that do the heavy lifting on this initial filtering.
+				.col-12.col-lg-6
+					h4.fw-bold.mb-3 Then comes my part:
+					p.fs-8.text-body-secondary.mb-4 After the AI does its work, I manually review each opportunity with proper due diligence. That final step leaves me with a couple of trades per week that I'm confident enough to risk my own capital on.
+
+					.border-start.border-primary.border-3.ps-4.mb-4.bg-gray-100.p-4.rounded-3
+						h5.fw-bold.text-primary.mb-2 Here's the key point:
+						p.fs-8.text-body-secondary.mb-0 As a trader, I need this data and these insider setups for my own decision-making anyway. I'm already doing this research to manage my own portfolio. Sharing the same ideas publicly doesn't cost me anything extra, it just means more eyes and better discussion around the best setups.
+
+				p.fs-7.fw-bold.text-body-emphasis.mb-0 So you're not getting charity. You're getting access to the exact same research I use to trade my own money.
+
+mixin InsiderWhoJoins
 	section.py-7.py-lg-8
 		.container-small.px-lg-7
-			.row.mb-5
-				.col-12.text-center
-					span.badge.bg-success-subtle.text-success.text-uppercase.fw-bold.fs-10.mb-3 Your Benefits
-					h2.fw-black.mb-3 What You Get When You Sign Up
-					p.fs-6.text-body-secondary.mb-0 Drop your email and get direct access to our Insider Trade Ideas stream
-			.row.g-4
-				.col-md-4
-					.card.h-100.shadow-sm.border-0
-						.card-body.p-5.text-center
-							.bg-primary-subtle.rounded-circle.d-inline-flex.align-items-center.justify-content-center.mb-4(style='width: 80px; height: 80px;')
-								span.fa-solid.fa-chart-line.text-primary.fs-1
-							h5.fw-bold.mb-3 Ready-to-trade ideas
-							p.text-body-secondary.fs-8.mb-0 Entry zones, conviction scores, and typical holding windows. No raw Form 4 data dumps.
-				.col-md-4
-					.card.h-100.shadow-sm.border-0
-						.card-body.p-5.text-center
-							.bg-success-subtle.rounded-circle.d-inline-flex.align-items-center.justify-content-center.mb-4(style='width: 80px; height: 80px;')
-								span.fa-solid.fa-lightbulb.text-success.fs-1
-							h5.fw-bold.mb-3 Context that matters
-							p.text-body-secondary.fs-8.mb-0 Who bought, how much, over what time window, and why it's interesting.
-				.col-md-4
-					.card.h-100.shadow-sm.border-0
-						.card-body.p-5.text-center
-							.bg-warning-subtle.rounded-circle.d-inline-flex.align-items-center.justify-content-center.mb-4(style='width: 80px; height: 80px;')
-								span.fa-solid.fa-filter.text-warning.fs-1
-							h5.fw-bold.mb-3 Quality over quantity
-							p.text-body-secondary.fs-8.mb-0 Only cluster, high-conviction setups make the feed. Not every insider buy. The ones that matter.
-			.row.mt-5
-				.col-12
-					.alert.alert-primary.text-center.mb-0
-						p.fw-bold.fs-6.mb-2 No spam. No paywall. No auto-trading nonsense.
-						p.text-body-secondary.mb-0 Just high-conviction trade ideas based on corporate insider cluster buying.
+			.row.justify-content-center
+				.col-lg-10.col-xl-9
+					span.badge.bg-warning-subtle.text-warning.fw-bold.mb-3.text-uppercase.fs-9 Vetting Process
+					h2.fw-black.mb-4 Why I Care Who Joins
+					p.fs-8.text-body-secondary.mb-5 Working with #[strong like-minded investors and traders] is one of the biggest edges you can have, but only if you're actually trading ideas, not looking for someone to push buttons for you.
+					p.fs-8.text-body-secondary.mb-5 Even though the ideas are free, I'm still vetting who gets access. I'm specifically looking for:
+
+					.timeline-vertical.timeline-with-details.mb-5
+
+						.timeline-item.position-relative
+							.row.g-md-3
+								.col-12.col-md-auto.d-flex
+									.timeline-item-bar.position-md-relative.me-3.me-md-0
+										.icon-item.icon-item-md.rounded-7.shadow-none.bg-success-subtle
+											span.text-success.fw-black.fs-8 1
+										//- span.timeline-bar.border-end.border-dashed
+								.col
+									.timeline-item-content.ps-6.ps-md-3
+										h5.fs-7.lh-sm.fw-bold Active investors who want a long-term relationship, not a one-off hit
+										p.text-body-secondary.mb-4 The edge here comes from cycles of ideas → execution → feedback → refinement. If you're just looking for the next "lottery ticket," this isn't for you.
+
+						.timeline-item.position-relative
+							.row.g-md-3
+								.col-12.col-md-auto.d-flex
+									.timeline-item-bar.position-md-relative.me-3.me-md-0
+										.icon-item.icon-item-md.rounded-7.shadow-none.bg-warning-subtle
+											span.text-warning.fw-black.fs-8 2
+								.col
+									.timeline-item-content.ps-6.ps-md-3
+										h5.fs-7.lh-sm.fw-bold Independent decision-makers who own their risk
+										p.text-body-secondary.mb-0 This is #[strong not] a signal service. I'm sharing what I'm watching and how I'm thinking about it. You decide what to trade, how to size it, and where your stops go. Your P&L is your responsibility - both the wins and the losses.
+
+					.alert.alert-subtle-warning.fw-semibold.text-center.mb-5(style='border:none;') If that sounds fair, you're exactly the type of person I want to work with.
+
+					p.fs-8.text-body-secondary.font-monospace.text-center If you don't quite fit that profile but still think you'd add value to the discussion, feel free to explain why in the form. Just keep it real - no spam.
+
+//- mixin InsiderWhatYouGet
+//- 	section.bg-body-emphasis.py-7.py-lg-8
+//- 		.container-small.px-lg-7
+//- 			.row.justify-content-center
+//- 				.col-lg-10.col-xl-9
+//- 					span.badge.bg-success-subtle.text-success.fw-bold.mb-3.text-uppercase.fs-9 Member Benefits
+//- 					h2.fw-black.mb-4 What You Get When You're In
+//- 					p.fs-8.text-body-secondary.mb-5 Once you're approved, you'll receive:
+
+//- 					ul.list-unstyled.mb-0
+//- 						li.d-flex.mb-4
+//- 							span.fa-solid.fa-check-circle.text-primary.me-3.fs-6.mt-1
+//- 							div
+//- 								h5.fw-bold.mb-2 High-conviction insider trade ideas
+//- 								p.text-body-secondary.mb-0.fs-8 Focused ideas I personally approve of.
+
+//- 						li.d-flex.mb-4
+//- 							span.fa-solid.fa-file-lines.text-success.me-3.fs-6.mt-1
+//- 							div
+//- 								h5.fw-bold.mb-2 Clear, usable context
+//- 								p.text-body-secondary.mb-0.fs-8 Who bought, how much, over what window, and why the setup is interesting #[em now].
+
+//- 						li.d-flex.mb-4
+//- 							span.fa-solid.fa-crosshairs.text-warning.me-3.fs-6.mt-1
+//- 							div
+//- 								h5.fw-bold.mb-2 A trader-first framing
+//- 								p.text-body-secondary.mb-0.fs-8 Typical holding horizon, where the idea might be wrong, and how it fits into a portfolio of similar bets.
+
+//- 						li.d-flex.mb-0
+//- 							span.fa-solid.fa-shield-halved.text-info.me-3.fs-6.mt-1
+//- 							div
+//- 								h5.fw-bold.mb-2 No hidden agenda
+//- 								p.text-body-secondary.mb-0.fs-8 No glossy marketing, no "secret indicators," no paywall upsell on the back end - just serious ideas for serious traders.
+
+//- mixin InsiderEmailSignup
+//- 	section.py-7.py-lg-8#signup
+//- 		.container-small.px-lg-7
+//- 			.row.justify-content-center
+//- 				.col-lg-8.col-xl-7
+//- 					.text-center.mb-5
+//- 						span.badge.bg-primary-subtle.text-primary.fw-bold.mb-3.text-uppercase.fs-9 Join Now
+//- 						h2.fw-black.mb-3 Request Access
+//- 						p.fs-8.text-body-secondary.mb-0 Fill out the form below and I'll review your application personally.
+
+//- 					.card.shadow-sm.border
+//- 						.card-body.p-5
+//- 							form
+//- 								.row.g-3
+//- 									.col-12.col-sm-6
+//- 										label.form-label.fw-semibold(for='firstName') First Name
+//- 										input#firstName.form-control(type='text' placeholder='John' required)
+
+//- 									.col-12.col-sm-6
+//- 										label.form-label.fw-semibold(for='emailAddress') Email Address
+//- 										input#emailAddress.form-control(type='email' placeholder='name@example.com' required)
+
+//- 									.col-12.col-sm-6
+//- 										label.form-label.fw-semibold(for='experience') Trading/Investing Experience
+//- 										select#experience.form-select(aria-label='Select your experience level')
+//- 											option(selected disabled) Choose...
+//- 											option(value='less-than-1') Less than 1 year
+//- 											option(value='1-3') 1-3 years
+//- 											option(value='3-5') 3-5 years
+//- 											option(value='5-plus') 5+ years
+//- 											option(value='professional') Professional (10+ years)
+
+//- 									.col-12.col-sm-6
+//- 										label.form-label.fw-semibold(for='description') What best describes you?
+//- 										select#description.form-select(aria-label='Select what describes you')
+//- 											option(selected disabled) Choose...
+//- 											option(value='active-trader') Active trader (retail)
+//- 											option(value='active-investor') Active investor (retail)
+//- 											option(value='professional') Professional trader/fund manager
+//- 											option(value='new') New to trading/investing
+//- 											option(value='other') Other
+
+//- 									.col-12
+//- 										label.form-label.fw-semibold(for='fitReason') Tell me why you're a good fit
+//- 										textarea#fitReason.form-control(rows='5' placeholder="Example: I've been trading for 3 years, mostly swing trading tech stocks. I've tracked some insider activity manually but want a more systematic approach. Looking for 3-5 high-conviction ideas per month that I can size properly...")
+
+//- 									.col-12
+//- 										button.btn.btn-primary.w-100.btn-lg(type='submit') Submit Application
+
+//- 							.text-center.mt-4
+//- 								p.fs-9.text-body-tertiary.mb-0 I personally review every application. You'll hear back within 48 hours.
+
 
 mixin InsiderEmailSignup
 	section.bg-body-emphasis.py-7.py-lg-8#signup
 		.container-small.px-lg-7
-			.row.justify-content-center
-				.col-lg-9.col-xl-8
-					.card.shadow-lg.border-0
-						.card-body.p-5.p-lg-6
-							.text-center.mb-5
-								h2.fw-black.mb-3 The insiders have already placed their bets.
-								p.fs-6.text-body-secondary.mb-4 They've seen the numbers. They've made their move. Now it's public.
-							.bg-body-secondary.rounded-3.p-4.mb-5
-								ul.list-unstyled.mb-0.fs-7
-									li.d-flex.align-items-center.mb-3
-										span.fa-solid.fa-circle-check.text-success.fs-5.me-3
-										span Drop your email
-									li.d-flex.align-items-center.mb-3
-										span.fa-solid.fa-circle-check.text-success.fs-5.me-3
-										span Get the next high-conviction Insider Trade Idea when it fires
-									li.d-flex.align-items-center
-										span.fa-solid.fa-circle-check.text-success.fs-5.me-3
-										span Decide - with full transparency - whether it fits your risk and style
-							form.mb-4
+			.row.mb-5
+				.col-12
+					span.badge.bg-primary-subtle.text-primary.fw-bold.mb-3.text-uppercase.fs-9 Member Benefits
+					h2.fw-black.mb-4 What You Get When You're In
+			.row.mb-5
+				.col-12.col-lg-6
+					p.fs-8.text-body-secondary.mb-5 Once you're approved, you'll receive:
+
+					ul.list-unstyled.mb-0
+						li.d-flex.mb-4
+							span.fa-solid.fa-check-circle.text-primary.me-3.fs-6.mt-1
+							div
+								h5.fw-bold.mb-2 High-conviction insider trade ideas
+								p.text-body-secondary.mb-0.fs-8 Focused ideas I personally approve of.
+
+						li.d-flex.mb-4
+							span.fa-solid.fa-file-lines.text-success.me-3.fs-6.mt-1
+							div
+								h5.fw-bold.mb-2 Clear, usable context
+								p.text-body-secondary.mb-0.fs-8 Who bought, how much, over what window, and why the setup is interesting #[em now].
+
+						li.d-flex.mb-4
+							span.fa-solid.fa-crosshairs.text-warning.me-3.fs-6.mt-1
+							div
+								h5.fw-bold.mb-2 A trader-first framing
+								p.text-body-secondary.mb-0.fs-8 Typical holding horizon, where the idea might be wrong, and how it fits into a portfolio of similar bets.
+
+						li.d-flex.mb-0
+							span.fa-solid.fa-shield-halved.text-info.me-3.fs-6.mt-1
+							div
+								h5.fw-bold.mb-2 No hidden agenda
+								p.text-body-secondary.mb-0.fs-8 No glossy marketing, no "secret indicators," no paywall upsell on the back end - just serious ideas for serious traders.
+				.col-12.col-lg-6
+					.text-center.mb-5
+						h3.fw-black.mb-3 Request Access
+						p.fs-8.text-body-secondary.mb-0 Fill out the form below and I'll review your application personally.
+
+					.card.shadow-sm.border
+						.card-body.p-5
+							form
 								.row.g-3
+									.col-12.col-sm-6
+										label.form-label.fw-semibold(for='firstName') First Name
+										input#firstName.form-control(type='text' placeholder='John' required)
+
+									.col-12.col-sm-6
+										label.form-label.fw-semibold(for='emailAddress') Email Address
+										input#emailAddress.form-control(type='email' placeholder='name@example.com' required)
+
+									.col-12.col-sm-6
+										label.form-label.fw-semibold(for='experience') Trading/Investing Experience
+										select#experience.form-select(aria-label='Select your experience level')
+											option(selected disabled) Choose...
+											option(value='less-than-1') Less than 1 year
+											option(value='1-3') 1-3 years
+											option(value='3-5') 3-5 years
+											option(value='5-plus') 5+ years
+											option(value='professional') Professional (10+ years)
+
+									.col-12.col-sm-6
+										label.form-label.fw-semibold(for='description') What best describes you?
+										select#description.form-select(aria-label='Select what describes you')
+											option(selected disabled) Choose...
+											option(value='active-trader') Active trader (retail)
+											option(value='active-investor') Active investor (retail)
+											option(value='professional') Professional trader/fund manager
+											option(value='new') New to trading/investing
+											option(value='other') Other
+
 									.col-12
-										input.form-control.form-control-lg(type='email', placeholder='Enter your email address', required)
+										label.form-label.fw-semibold(for='fitReason') Tell me why you're a good fit
+										textarea#fitReason.form-control(rows='5' placeholder="Example: I've been trading for 3 years, mostly swing trading tech stocks. I've tracked some insider activity manually but want a more systematic approach. Looking for 3-5 high-conviction ideas per month that I can size properly...")
+
 									.col-12
-										button.btn.btn-primary.btn-lg.w-100.rounded-pill(type='submit')
-											span.fw-bold Get Free Insider Trade Ideas
-											span.fa-solid.fa-arrow-right.ms-2
-							.text-center
-								p.text-body-tertiary.fs-9.mb-0 Markets move whether you're ready or not. This is your chance to see where the informed money is going.
+										button.btn.btn-primary.w-100.btn-lg(type='submit') Submit Application
+
+							.text-center.mt-4
+								p.fs-9.text-body-tertiary.mb-0 I personally review every application. You'll hear back within 48 hours.
