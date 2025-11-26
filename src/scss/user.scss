@@ -29,3 +29,12 @@
     -webkit-text-fill-color: var(--#{$prefix}emphasis-bg);
     }
 }
+
+// Tighter table text on mobile for the insider cluster list
+@media (max-width: 576px) {
+  .cluster-table th,
+  .cluster-table td{
+    font-size: 0.7rem;
+    line-height: 1.2;
+  }
+}

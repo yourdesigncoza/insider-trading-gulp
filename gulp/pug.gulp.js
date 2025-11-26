@@ -1,4 +1,6 @@
 /* eslint-disable import/no-extraneous-dependencies */
+// gulp pug:index
+// gulp product:make
 const fs = require('fs');
 const path = require('path');
 const url = require('url');
@@ -98,6 +100,39 @@ gulp.task('pug', () =>
     .src(paths.pug.src.pages, {
       cwd: paths.pug.base,
       // This causes the components and docs subfolders to be mirrored in dist folder
+      base: paths.pug.base
+    })
+    .pipe(
+      gulpData(file => {
+        return {
+          ...file,
+          ...locals
+        };
+      })
+    )
+    .pipe(gulpPug(options))
+    .pipe(
+      gulpJsbeautifier({
+        unformatted: ['code', 'pre', 'em', 'strong', 'span'],
+        indent_inner_html: true,
+        indent_char: ' ',
+        indent_size: 2,
+        sep: '\n'
+      })
+    )
+    .pipe(
+      gulpJsbeautifier.reporter({
+        verbosity: gulpJsbeautifier.report.ALL
+      })
+    )
+    .pipe(gulp.dest(`${baseDir}/${paths.pug.dest}`))
+);
+
+// Compile only src/pug/index.pug for quick single-page builds
+gulp.task('pug:index', () =>
+  gulp
+    .src('index.pug', {
+      cwd: paths.pug.base,
       base: paths.pug.base
     })
     .pipe(

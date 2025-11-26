@@ -8,9 +8,7 @@ mixin InsiderNavbar
 			button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
 				span.navbar-toggler-icon
 			.collapse.navbar-collapse#navbarSupportedContent
-				.border-bottom.border-translucent.border-bottom-lg-0.mb-2
-					+Search({placeholder: 'Search', inputClass:'rounded-pill my-4'}).d-inline.d-lg-none
-				ul.navbar-nav.me-auto.mb-2.mb-lg-0
+				ul.navbar-nav.me-auto.mb-2.mt-3.mb-lg-0
 					li.nav-item.border-bottom.border-translucent.border-bottom-lg-0
 						a.nav-link.lh-1.py-0.fs-9.fw-bold.py-3(aria-current='page' href='#top') Overview
 					li.nav-item.border-bottom.border-translucent.border-bottom-lg-0
@@ -22,18 +20,20 @@ mixin InsiderNavbar
 				.d-grid.d-lg-flex.align-items-center
 					div.nav-item.d-flex.align-items-center.d-none.d-lg-block.pe-2
 						+ToggleThemeBtn('themeControlToggle').px-2
-					//- a.btn.btn-link.text-body.order-1.order-lg-0.ps-4.me-lg-2(href=`${CWD}${paths['simple-signin']}`) Sign in
-					//- a.btn.btn-phoenix-primary.order-0(href=`${CWD}${paths['simple-signup']}`)
-					//- 	span.fw-bold Sign up
-
-mixin InsiderHero2
-	section.position-relative.overflow-hidden.bg-gray-100.py-5 
-		.container-small
-			.row
-				div.text-center
-					.col-12
-						h2.fs-6.fs-md-5.fs-xl-4.fw-black.mb-3 Investing is simple. Keeping it simple ...
-						h3.fs-6.fs-md-5.fs-xl-4.fw-black.mb-0.text-body-quaternary That's the challenge.
+mixin InsiderHeroHook
+	section.py-7.py-lg-8.bg-gray-100#top 
+		.container-small.px-lg-7
+			.row.justify-content-center
+				.col-12.col-lg-9
+					h1.display-3.fw-black.mb-5.lh-lg People running the company just bought their own stock. #[div.display-3.fw-black.mb-4.lh-sm.text-body-quaternary Are you paying attention?]
+					.bg-body-emphasis.rounded-3.p-5.shadow-sm.text-start.mb-5
+						p.fs-7.text-body-secondary.mb-4 Corporate executives see the real numbers before anyone else. When they put #[span.fw-bold.text-primary their own cash] on the line - not options, not bonuses - it means something.
+						.border-start.border-primary.border-3.ps-4.mb-4
+							p.fs-7.fw-semibold.text-body-emphasis.mb-2 We track those moves. You get the trade ideas.
+							p.fs-8.mb-0.text-warning-dark No paywall, No subscription.
+					.d-flex.flex-column.flex-md-row.gap-3.justify-content-center.pb-5
+						a.btn.btn-subtle-info.border-info.btn-lg.me-1.mb-1(href='#signup') Get Started It's Free
+						a.btn.btn-subtle-success.border-success.btn-lg.me-1.mb-1(href='#why-it-works') Learn How It Works
 
 mixin InsiderSubHero
 	section.bg-body-emphasis.pt-0#insiders
@@ -44,25 +44,14 @@ mixin InsiderSubHero
 					h2.mb-5 Follow the Corporate Smart Money
 			.row.g-6
 				.col-lg-7
-					p.fs-8.text-body-secondary.mb-5.font-monospace When a company's 
+					p.fs-8.text-body-secondary.mb-4.font-monospace When a company's 
 						span.badge.badge-phoenix.badge-phoenix-success.fw-semibold(style='border:none;') CFO, COO, and General Counsel
 						|	 all start buying stock with their own money at the same time, they're not guessing. They know something the market doesn't know ~ 
 						span.badge.badge-phoenix.badge-phoenix-warning.fw-semibold(style='border:none;') YET!
-						div.card.mb-5(style='width: 20rem;') 
-							div.card-header.p-3.py-1.text-bg-secondary.fw-bold.text-uppercase.fs-9(style='padding-top:0.5rem !important;') Just Follow The Money
-							div.card-body.p-2.px-3
-								.d-flex.flex-1
-									span.d-flex
-										.avatar.avatar-xl.me-3
-											img.rounded-circle(src='assets/img/team/35.webp', alt='')
-										.me-3.flex-1.mt-2
-											h4.fs-9.mb-0 Roy Anderson
-											span.fs-9 No complexity, No overthinking.
-
 					p.fs-8.fw-bold.mb-4 Most investors are drowning in data. We do something radically simpler.
-					div.alert.alert-subtle-primary.fw-semibold.text-center(style='border:none;') We follow the people who actually know what's going on inside the business.
-					p.fs-8.text-body-secondary.mb-3 When multiple senior executives quietly buy their own stock around the same time, they're acting on a level of understanding the public won't see for months.
-					div.alert.alert-subtle-warning.fw-semibold.text-center(style='border:none;') That's our edge. That's where we hunt for stock buy opportunities.
+					div.alert.alert-subtle-primary.fw-semibold.text-center.mb-4(style='border:none;') We follow the people who actually know what's going on inside the business.
+					p.fs-8.text-body-secondary.mb-4 When multiple senior executives quietly buy their own stock around the same time, they're acting on a level of understanding the public won't see for months.
+					div.alert.alert-subtle-warning.fw-semibold.text-center.mb-2(style='border:none;') That's our edge. That's where we hunt for stock buy opportunities.
 					div.border-bottom.border-dashed &nbsp;
 
 					.accordion.mb-2#accordionExample
@@ -126,24 +115,8 @@ mixin InsiderSubHero
 							hr.my-4
 							p.text-body-secondary.fs-9.mb-2 When conviction, allocation size, and timing spike together, we push an alert to the desk and clients immediately.
 							small.text-body-tertiary.fs-10 Data sourced from SEC Form 4 filings & our automated list monitoring.
-
-mixin InsiderHeroHook
-	section.py-7.py-lg-8.bg-gray-100#top 
-		.container-small.px-lg-7.text-center
-			.row.justify-content-center
-				.col-lg-10.col-xl-9
-					h1.display-3.fw-black.mb-4.lh-sm People running the company just bought their own stock. #[span.display-3.fw-black.mb-4.lh-sm.text-body-quaternary Are you paying attention?]
-					.bg-body-emphasis.rounded-3.p-5.shadow-sm.text-start.mb-5
-						p.fs-7.text-body-secondary.mb-4 Corporate executives see the real numbers before anyone else. When they quietly put their own money on the line - not stock options, not bonuses, #[span.fw-bold.text-primary their own cash], it means something.
-						.border-start.border-primary.border-3.ps-4.mb-4
-							p.fs-7.fw-semibold.text-body-emphasis.mb-2 We track those moves. You get the trade ideas.
-							p.fs-8.mb-0.text-warning-dark No paywall, No subscription.
-					.d-flex.flex-column.flex-md-row.gap-3.justify-content-center.pb-5
-						a.btn.btn-subtle-info.border-info.btn-lg.me-1.mb-1(href='#signup') Get Started It's Free
-						a.btn.btn-subtle-success.border-success.btn-lg.me-1.mb-1(href='#why-it-works') Learn How It Works
-
 mixin InsiderWhyItWorks
-	section.bg-body-emphasis.py-7.py-lg-8#why-it-works
+	section.py-7.py-lg-8#why-it-works
 		.container-small.px-lg-7
 			.row
 				.col-12
@@ -183,28 +156,29 @@ mixin InsiderWhyItWorks
 									.card-header.border-0.pb-0
 										h5 Example cluster buy list
 									.card-body
-										table.table.table-sm.align-middle.mb-0
-											thead
-												tr
-													th.text-body-secondary.fw-semibold.fs-10.text-uppercase(scope='col') Ticker
-													th.text-body-secondary.fw-semibold.fs-10.text-uppercase(scope='col') Insider
-													th.text-body-secondary.fw-semibold.fs-10.text-uppercase(scope='col') Allocation
-													th.text-body-secondary.fw-semibold.fs-10.text-uppercase(scope='col') Conviction
-													th.text-body-secondary.fw-semibold.fs-10.text-uppercase.text-end(scope='col') Upside
-											tbody
-												each row in corporateSignals
+										.table-responsive
+											table.table.table-sm.align-middle.mb-0.cluster-table
+												thead
 													tr
-														td.fw-semibold #{row.ticker}
-														td.text-body-tertiary #{row.insider}
-														td #{row.value}
-														td
-															span.badge(class='bg-' + row.color + '-subtle text-' + row.color)= row.conviction
-															span.d-block.fs-10.text-body-tertiary #{row.catalyst}
-														td.text-end
-															span.text-success.fw-bold #{row.upside}
+														th.text-body-secondary.fw-semibold.fs-10.text-uppercase(scope='col') Ticker
+														th.text-body-secondary.fw-semibold.fs-10.text-uppercase(scope='col') Insider
+														th.text-body-secondary.fw-semibold.fs-10.text-uppercase(scope='col') Allocation
+														th.text-body-secondary.fw-semibold.fs-10.text-uppercase(scope='col') Conviction
+														th.text-body-secondary.fw-semibold.fs-10.text-uppercase.text-end(scope='col') Upside
+												tbody
+													each row in corporateSignals
+														tr
+															td.fw-semibold #{row.ticker}
+															td.text-body-tertiary #{row.insider}
+															td #{row.value}
+															td
+																span.badge(class='bg-' + row.color + '-subtle text-' + row.color)= row.conviction
+																span.d-block.fs-10.text-body-tertiary #{row.catalyst}
+															td.text-end
+																span.text-success.fw-bold #{row.upside}
 
 mixin InsiderOurEdge
-	section.py-7.py-lg-8#process
+	section.bg-body-emphasis.py-7.py-lg-8#process
 		.container-small.px-lg-7
 			.row.mb-5
 				.col-12
@@ -273,7 +247,7 @@ mixin InsiderOurEdge
 										.col
 											.timeline-item-content.ps-6.ps-md-3
 												h3.fw-black.text-success.mb-1 82.9%
-												p.text-body-secondary.mb-4 Best performing year.
+												p.text-body-secondary.mb-4 - Return, Best calendar year (2025)
 
 								.timeline-item.position-relative
 									.row.g-md-3
@@ -283,51 +257,59 @@ mixin InsiderOurEdge
 													span.text-primary-dark.fs-10(data-feather='zap')
 										.col
 											.timeline-item-content.ps-6.ps-md-3
-												h3.fw-black.text-primary.mb-1 40-75%
-												p.text-body-secondary.mb-0 Individual stock moves within two months of disclosure.
+												h3.fw-black.text-primary.mb-1 15-75%
+												p.text-body-secondary.mb-0 Range of gains on individual positions, typically within 60 days of insider filing.
 							.col-12.text-center
 								div.border-bottom.border-dashed.mb-4 &nbsp;
 								p.fs-6.text-body-emphasis.mb-0 This isn't about hitting one lucky trade. #[span.fw-bold.text-warning It's about a system that's worked again and again.]
 
 mixin InsiderWhyFree
-	section.bg-body-emphasis.py-7.py-lg-8#why-free
+	section.py-7.py-lg-8#why-free
 		.container-small.px-lg-7
 			.row.mb-5
 				.col-12
 					span.badge.bg-primary-subtle.text-primary.fw-bold.mb-3.text-uppercase.fs-9 No Catch
 					h2.fw-black.mb-4 My Trade Ideas for Free
-					p.fs-7.text-body-secondary.mb-0 The only reason this service exists at no cost is because of AI.
-			.row.mb-5
+			.row
 				.col-12.col-lg-6
-					p.fs-8.text-body-secondary.mb-4 Here's the reality: if you're monitoring Form 4 filings and looking only at US "P" (purchase) codes, you're dealing with around 45,000-50,000 insider trades per year. Obviously, you'd never want to act on all of them.
+					div.card.mb-4
+						div.card-header.p-3.py-1.text-bg-secondary.fw-bold.text-uppercase.fs-9(style='padding-top:0.5rem !important;') About Me
+						div.card-body.p-2.px-3
+							.d-flex.flex-1.align-items-center.justify-content-end.gap-3
+								span.d-flex.flex-shrink-0
+									.avatar.avatar-xl
+										img.rounded-circle(src='assets/img/insider-trading/jmm.jpg', alt='')
+								.flex-1.mt-2
+									h4.fs-9.mb-1 John Montgomery
+									p.fs-9.lh-2.mb-0 I'm a trader and AI developer based in South Africa. I built this system to filter insider trades for my own portfolio - now I'm sharing what I find.
+					.alert.alert-subtle-primary.fw-semibold.text-center.mb-4(style='border:none;') The only reason this service exists at no cost is because of AI.
+					p.fs-8.text-body-secondary.mb-4 The reality: if you're monitoring Form 4 filings and looking only at US "P" (purchase) codes, you're dealing with around 45,000-50,000 insider trades per year. Obviously, you'd never want to act on all of them.
 
-					h4.fw-bold.mb-3 The filtering process breaks down like this:
+					h4.fw-bold.mb-4 The filtering process breaks down like this:
 					p.fs-8.text-body-secondary.mb-4 After applying sensible filters for buys only, officers and directors, clustered purchases, meaningful size relative to salary, and excluding automated 10b5-1 plans you're left with dozens to a few hundred potentially actionable trades per year, depending on how strict your criteria are.
-
-					.alert.alert-subtle-primary.fw-semibold.text-center(style='border:none;') That's where AI changes everything.
-
-					p.fs-8.text-body-secondary.mb-4 What used to require a team of full-time analysts can now be handled by a lean, automated AI research stack. I've developed and continue to maintain proprietary AI models that do the heavy lifting on this initial filtering.
 				.col-12.col-lg-6
-					h4.fw-bold.mb-3 Then comes my part:
+					p.fs-8.text-body-secondary.mb-4 What used to require a team of full-time analysts can now be handled by a lean, automated AI research stack. I've developed and continue to maintain proprietary AI models that do the heavy lifting on this initial filtering.
+					h4.fw-bold.mb-4 Then comes my part:
 					p.fs-8.text-body-secondary.mb-4 After the AI does its work, I manually review each opportunity with proper due diligence. That final step leaves me with a couple of trades per week that I'm confident enough to risk my own capital on.
 
-					.border-start.border-primary.border-3.ps-4.mb-4.bg-gray-100.p-4.rounded-3
-						h5.fw-bold.text-primary.mb-2 Here's the key point:
+					.ps-4.mb-4.bg-gray-100.p-4.rounded-3
+						h5.fw-bold.text-primary.mb-2 The key point
 						p.fs-8.text-body-secondary.mb-0 As a trader, I need this data and these insider setups for my own decision-making anyway. I'm already doing this research to manage my own portfolio. Sharing the same ideas publicly doesn't cost me anything extra, it just means more eyes and better discussion around the best setups.
+ 			
 
-				p.fs-7.fw-bold.text-body-emphasis.mb-0 So you're not getting charity. You're getting access to the exact same research I use to trade my own money.
+				p.fs-7.fw-bold.text-body-emphasis.mt-5.mb-0 So you're not getting charity. You're getting access to the exact same research I use to trade my own money.
 
 mixin InsiderWhoJoins
-	section.py-7.py-lg-8#who-joins
+	section.bg-body-emphasis.py-7.py-lg-8#who-joins
 		.container-small.px-lg-7
 			.row.justify-content-center
 				.col-lg-10.col-xl-9
 					span.badge.bg-warning-subtle.text-warning.fw-bold.mb-3.text-uppercase.fs-9 Are you a good fit?
 					h2.fw-black.mb-4 Why I Care Who Joins.
 					p.fs-8.text-body-secondary.mb-5 Working with #[strong like-minded investors and traders] is one of the biggest edges you can have, my aim is to build out this community so everyone gets value.
-					p.fs-8.text-body-secondary.mb-5 Even though the ideas are free, does not mean they are for free-loaders, I'm looking for dedicated and commited people. 
+					p.fs-8.text-body-secondary.mb-5 The ideas are free. The commitment isn't. I'm looking for people who'll actually use this.
 					
-					p.fs-8.text-body-secondary.mb-5 Are you the type of person I'm looking for :
+					p.fs-8.text-body-secondary.mb-5 This is for you if :
 
 					.timeline-vertical.timeline-with-details.mb-5
 
@@ -364,13 +346,13 @@ mixin InsiderWhoJoins
 								.col
 									.timeline-item-content.ps-6.ps-md-3
 										h5.fs-7.lh-sm.fw-bold New to investing?
-										p.text-body-secondary.mb-0 #[strong You're welcome here] - just come ready to learn, ask questions, and take responsibility for your own decisions. Experience isn't required. The right attitude is..
+										p.text-body-secondary.mb-0 #[strong You're welcome here] - just come ready to learn and own your decisions. Experience isn't required. The right attitude is.
 
-					.alert.alert-subtle-warning.fw-semibold.text-center.mb-5(style='border:none;') If that sounds fair, you're exactly the type of person I want to work with.
+					.alert.alert-subtle-warning.fw-semibold.text-center(style='border:none;') If that sounds fair, you're exactly the type of person I want to work with.
 
 
 mixin InsiderEmailSignup
-	section.bg-body-emphasis.py-7.py-lg-8#signup
+	section.py-7.py-lg-8#signup
 		.container-small.px-lg-7
 			.row.mb-5
 				.col-12
@@ -404,7 +386,7 @@ mixin InsiderEmailSignup
 								p.text-body-secondary.mb-0.fs-8 No glossy marketing, no "secret indicators," no paywall upsell on the back end - just serious ideas for serious traders.
 				.col-12.col-lg-6
 					.text-center.mb-5
-						h4.fw-black.mb-3 Request Access
+						h4.fw-black.mb-3 Get Your First Setup
 						p.fs-8.text-body-secondary.mb-0 Fill out the form below and I'll review your application personally.
 
 					.card.shadow-sm.border
@@ -423,7 +405,7 @@ mixin InsiderEmailSignup
 									.col-12.col-sm-6
 										label.form-label.fw-semibold(for='experience') Trading/Investing Experience
 										select#experience.form-select(name='experience' aria-label='Select your experience level' required)
-											option(selected disabled) Choose...
+											option(value='' selected disabled hidden) Choose...
 											option(value='less-than-1') Less than 1 year
 											option(value='1-3') 1-3 years
 											option(value='3-5') 3+ years
@@ -432,7 +414,7 @@ mixin InsiderEmailSignup
 									.col-12.col-sm-6
 										label.form-label.fw-semibold(for='description') What best describes you?
 										select#description.form-select(name='description' aria-label='Select what describes you' required)
-											option(selected disabled) Choose...
+											option(value='' selected disabled hidden) Choose...
 											option(value='active-trader') Active trader investor (retail)
 											option(value='professional') Professional trader/fund manager
 											option(value='new') New to trading/investing
@@ -466,6 +448,10 @@ mixin InsiderEmailSignup
 				e.preventDefault();
 				successEl?.classList.add('d-none');
 				errorEl?.classList.add('d-none');
+				if (!form.checkValidity()) {
+					form.reportValidity();
+					return;
+				}
 				try {
 					const res = await fetch(form.action, {
 						method: form.method,
@@ -486,11 +472,10 @@ mixin InsiderEmailSignup
 		})();
 
 mixin InsiderFooter
-	//- footer.footer&attributes(attributes)
-	footer.footer.d-flex.justify-content-center.bg-body.border-0
+	footer.bg-secondary.footer.d-flex.justify-content-center.border-0
 		.row.g-0.justify-content-between.align-items-center.h-100
 			.col-12.col-sm-auto.text-center
-				p.mb-0.mt-2.mt-sm-0.text-body Thank you.
+				p.mb-0.mt-2.mt-sm-0.text-body-quaternary Thank you.
 					span.d-none.d-sm-inline-block
 					span.d-none.d-sm-inline-block.mx-1 |
 					br.d-sm-none 
