@@ -12,19 +12,19 @@ mixin InsiderNavbar
 					+Search({placeholder: 'Search', inputClass:'rounded-pill my-4'}).d-inline.d-lg-none
 				ul.navbar-nav.me-auto.mb-2.mb-lg-0
 					li.nav-item.border-bottom.border-translucent.border-bottom-lg-0
-						a.nav-link.lh-1.py-0.fs-9.fw-bold.py-3(aria-current='page' href='#') Home
+						a.nav-link.lh-1.py-0.fs-9.fw-bold.py-3(aria-current='page' href='#top') Overview
 					li.nav-item.border-bottom.border-translucent.border-bottom-lg-0
-						a.nav-link.lh-1.py-0.fs-9.fw-bold.py-3(href='#feature') Features
+						a.nav-link.lh-1.py-0.fs-9.fw-bold.py-3(href='#why-it-works') Why It Works
 					li.nav-item.border-bottom.border-translucent.border-bottom-lg-0
-						a.nav-link.lh-1.py-0.fs-9.fw-bold.py-3(href='#blog') Blog
+						a.nav-link.lh-1.py-0.fs-9.fw-bold.py-3(href='#process') Method
 					li.nav-item
-						a.nav-link.lh-1.py-0.fs-9.fw-bold.py-3(href='#team') Team
+						a.nav-link.lh-1.py-0.fs-9.fw-bold.py-3(href='#signup') Apply
 				.d-grid.d-lg-flex.align-items-center
 					div.nav-item.d-flex.align-items-center.d-none.d-lg-block.pe-2
 						+ToggleThemeBtn('themeControlToggle').px-2
-					a.btn.btn-link.text-body.order-1.order-lg-0.ps-4.me-lg-2(href=`${CWD}${paths['simple-signin']}`) Sign in
-					a.btn.btn-phoenix-primary.order-0(href=`${CWD}${paths['simple-signup']}`)
-						span.fw-bold Sign up
+					//- a.btn.btn-link.text-body.order-1.order-lg-0.ps-4.me-lg-2(href=`${CWD}${paths['simple-signin']}`) Sign in
+					//- a.btn.btn-phoenix-primary.order-0(href=`${CWD}${paths['simple-signup']}`)
+					//- 	span.fw-bold Sign up
 
 mixin InsiderHero2
 	section.position-relative.overflow-hidden.bg-gray-100.py-5 
@@ -128,7 +128,7 @@ mixin InsiderSubHero
 							small.text-body-tertiary.fs-10 Data sourced from SEC Form 4 filings & our automated list monitoring.
 
 mixin InsiderHeroHook
-	section.py-7.py-lg-8.bg-gray-100 
+	section.py-7.py-lg-8.bg-gray-100#top 
 		.container-small.px-lg-7.text-center
 			.row.justify-content-center
 				.col-lg-10.col-xl-9
@@ -140,10 +140,10 @@ mixin InsiderHeroHook
 							p.fs-8.mb-0.text-warning-dark No paywall, No subscription.
 					.d-flex.flex-column.flex-md-row.gap-3.justify-content-center.pb-5
 						a.btn.btn-subtle-info.border-info.btn-lg.me-1.mb-1(href='#signup') Get Started It's Free
-						a.btn.btn-subtle-success.border-success.btn-lg.me-1.mb-1(href='#learn-more') Learn How It Works
+						a.btn.btn-subtle-success.border-success.btn-lg.me-1.mb-1(href='#why-it-works') Learn How It Works
 
 mixin InsiderWhyItWorks
-	section.bg-body-emphasis.py-7.py-lg-8
+	section.bg-body-emphasis.py-7.py-lg-8#why-it-works
 		.container-small.px-lg-7
 			.row
 				.col-12
@@ -204,7 +204,7 @@ mixin InsiderWhyItWorks
 															span.text-success.fw-bold #{row.upside}
 
 mixin InsiderOurEdge
-	section.py-7.py-lg-8
+	section.py-7.py-lg-8#process
 		.container-small.px-lg-7
 			.row.mb-5
 				.col-12
@@ -290,7 +290,7 @@ mixin InsiderOurEdge
 								p.fs-6.text-body-emphasis.mb-0 This isn't about hitting one lucky trade. #[span.fw-bold.text-warning It's about a system that's worked again and again.]
 
 mixin InsiderWhyFree
-	section.bg-body-emphasis.py-7.py-lg-8
+	section.bg-body-emphasis.py-7.py-lg-8#why-free
 		.container-small.px-lg-7
 			.row.mb-5
 				.col-12
@@ -318,14 +318,16 @@ mixin InsiderWhyFree
 				p.fs-7.fw-bold.text-body-emphasis.mb-0 So you're not getting charity. You're getting access to the exact same research I use to trade my own money.
 
 mixin InsiderWhoJoins
-	section.py-7.py-lg-8
+	section.py-7.py-lg-8#who-joins
 		.container-small.px-lg-7
 			.row.justify-content-center
 				.col-lg-10.col-xl-9
-					span.badge.bg-warning-subtle.text-warning.fw-bold.mb-3.text-uppercase.fs-9 Vetting Process
-					h2.fw-black.mb-4 Why I Care Who Joins
-					p.fs-8.text-body-secondary.mb-5 Working with #[strong like-minded investors and traders] is one of the biggest edges you can have, but only if you're actually trading ideas, not looking for someone to push buttons for you.
-					p.fs-8.text-body-secondary.mb-5 Even though the ideas are free, I'm still vetting who gets access. I'm specifically looking for:
+					span.badge.bg-warning-subtle.text-warning.fw-bold.mb-3.text-uppercase.fs-9 Are you a good fit?
+					h2.fw-black.mb-4 Why I Care Who Joins.
+					p.fs-8.text-body-secondary.mb-5 Working with #[strong like-minded investors and traders] is one of the biggest edges you can have, my aim is to build out this community so everyone gets value.
+					p.fs-8.text-body-secondary.mb-5 Even though the ideas are free, does not mean they are for free-loaders, I'm looking for dedicated and commited people. 
+					
+					p.fs-8.text-body-secondary.mb-5 Are you the type of person I'm looking for :
 
 					.timeline-vertical.timeline-with-details.mb-5
 
@@ -345,16 +347,27 @@ mixin InsiderWhoJoins
 							.row.g-md-3
 								.col-12.col-md-auto.d-flex
 									.timeline-item-bar.position-md-relative.me-3.me-md-0
-										.icon-item.icon-item-md.rounded-7.shadow-none.bg-warning-subtle
-											span.text-warning.fw-black.fs-8 2
+										.icon-item.icon-item-md.rounded-7.shadow-none.bg-primary-subtle
+											span.text-primary.fw-black.fs-8 2
+										//- span.timeline-bar.border-end.border-dashed
 								.col
 									.timeline-item-content.ps-6.ps-md-3
 										h5.fs-7.lh-sm.fw-bold Independent decision-makers who own their risk
-										p.text-body-secondary.mb-0 This is #[strong not] a signal service. I'm sharing what I'm watching and how I'm thinking about it. You decide what to trade, how to size it, and where your stops go. Your P&L is your responsibility - both the wins and the losses.
+										p.text-body-secondary.mb-4 This is #[strong not] a signal service. I'm sharing what I'm watching and how I'm thinking about it. You decide what to trade, how to size it, and where your stops go. Your P&L is your responsibility - both the wins and the losses.
+
+						.timeline-item.position-relative
+							.row.g-md-3
+								.col-12.col-md-auto.d-flex
+									.timeline-item-bar.position-md-relative.me-3.me-md-0
+										.icon-item.icon-item-md.rounded-7.shadow-none.bg-warning-subtle
+											span.text-warning.fw-black.fs-8 3
+								.col
+									.timeline-item-content.ps-6.ps-md-3
+										h5.fs-7.lh-sm.fw-bold New to investing?
+										p.text-body-secondary.mb-0 #[strong You're welcome here] - just come ready to learn, ask questions, and take responsibility for your own decisions. Experience isn't required. The right attitude is..
 
 					.alert.alert-subtle-warning.fw-semibold.text-center.mb-5(style='border:none;') If that sounds fair, you're exactly the type of person I want to work with.
 
-					p.fs-8.text-body-secondary.font-monospace.text-center If you don't quite fit that profile but still think you'd add value to the discussion, feel free to explain why in the form. Just keep it real - no spam.
 
 mixin InsiderEmailSignup
 	section.bg-body-emphasis.py-7.py-lg-8#signup
@@ -396,19 +409,20 @@ mixin InsiderEmailSignup
 
 					.card.shadow-sm.border
 						.card-body.p-5
-							form
+							form#insiderForm(action='https://formspree.io/f/mqaovoag' method='POST')
+								input(type='hidden' name='_subject' value='New Insider Access Request')
 								.row.g-3
 									.col-12.col-sm-6
 										label.form-label.fw-semibold(for='firstName') First Name
-										input#firstName.form-control(type='text' placeholder='John' required)
+										input#firstName.form-control(type='text' name='firstName' placeholder='John' required)
 
 									.col-12.col-sm-6
 										label.form-label.fw-semibold(for='emailAddress') Email Address
-										input#emailAddress.form-control(type='email' placeholder='name@example.com' required)
+										input#emailAddress.form-control(type='email' name='emailAddress' placeholder='name@example.com' required)
 
 									.col-12.col-sm-6
 										label.form-label.fw-semibold(for='experience') Trading/Investing Experience
-										select#experience.form-select(aria-label='Select your experience level')
+										select#experience.form-select(name='experience' aria-label='Select your experience level')
 											option(selected disabled) Choose...
 											option(value='less-than-1') Less than 1 year
 											option(value='1-3') 1-3 years
@@ -418,7 +432,7 @@ mixin InsiderEmailSignup
 
 									.col-12.col-sm-6
 										label.form-label.fw-semibold(for='description') What best describes you?
-										select#description.form-select(aria-label='Select what describes you')
+										select#description.form-select(name='description' aria-label='Select what describes you')
 											option(selected disabled) Choose...
 											option(value='active-trader') Active trader (retail)
 											option(value='active-investor') Active investor (retail)
@@ -428,10 +442,60 @@ mixin InsiderEmailSignup
 
 									.col-12
 										label.form-label.fw-semibold(for='fitReason') Tell me why you're a good fit
-										textarea#fitReason.form-control(rows='5' placeholder="Example: I've been trading for 3 years, mostly swing trading tech stocks. I've tracked some insider activity manually but want a more systematic approach. Looking for 3-5 high-conviction ideas per month that I can size properly...")
+										textarea#fitReason.form-control(name='fitReason' rows='5' placeholder="Example: I've been trading for 3 years, mostly swing trading tech stocks. I've tracked some insider activity manually but want a more systematic approach. Looking for 3-5 high-conviction ideas per month that I can size properly...")
 
 									.col-12
 										button.btn.btn-primary.w-100.btn-lg(type='submit') Submit Application
 
 							.text-center.mt-4
 								p.fs-9.text-body-tertiary.mb-0 I personally review every application. You'll hear back within 48 hours.
+
+						.alert.alert-subtle-success.d-none.m-2.mt-0#insiderFormSuccess
+							h5.fw-bold.mb-1 Thanks!
+							p.mb-0 The form was submitted successfully.
+						.alert.alert-subtle-danger.d-none.m-2.mt-0#insiderFormError
+							h5.fw-bold.mb-1 Something went wrong
+							p.mb-0 Please try again or email me directly. support@devai.co.za
+
+	//- Inline handler to keep Formspree submission on-page
+	script.
+		(() => {
+			const form = document.getElementById('insiderForm');
+			if (!form) return;
+			const successEl = document.getElementById('insiderFormSuccess');
+			const errorEl = document.getElementById('insiderFormError');
+			form.addEventListener('submit', async (e) => {
+				e.preventDefault();
+				successEl?.classList.add('d-none');
+				errorEl?.classList.add('d-none');
+				try {
+					const res = await fetch(form.action, {
+						method: form.method,
+						headers: { Accept: 'application/json' },
+						body: new FormData(form),
+					});
+					if (res.ok) {
+						form.reset();
+						successEl?.classList.remove('d-none');
+						form.scrollIntoView({ behavior: 'smooth', block: 'start' });
+					} else {
+						throw new Error('Request failed');
+					}
+				} catch (err) {
+					errorEl?.classList.remove('d-none');
+				}
+			});
+		})();
+
+mixin InsiderFooter
+	//- footer.footer&attributes(attributes)
+	footer.footer.d-flex.justify-content-center.bg-body.border-0
+		.row.g-0.justify-content-between.align-items-center.h-100
+			.col-12.col-sm-auto.text-center
+				p.mb-0.mt-2.mt-sm-0.text-body Thank you.
+					span.d-none.d-sm-inline-block
+					span.d-none.d-sm-inline-block.mx-1 |
+					br.d-sm-none 
+					| #{ new Date().getFullYear() } &copy;
+					a.mx-1(href="https://Devai.co.za", target="_blank") Developed By Devai.co.za
+			.col-12.col-sm-auto.text-center
