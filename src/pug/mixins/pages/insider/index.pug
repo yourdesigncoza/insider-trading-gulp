@@ -422,33 +422,31 @@ mixin InsiderEmailSignup
 
 									.col-12.col-sm-6
 										label.form-label.fw-semibold(for='experience') Trading/Investing Experience
-										select#experience.form-select(name='experience' aria-label='Select your experience level')
+										select#experience.form-select(name='experience' aria-label='Select your experience level' required)
 											option(selected disabled) Choose...
 											option(value='less-than-1') Less than 1 year
 											option(value='1-3') 1-3 years
-											option(value='3-5') 3-5 years
-											option(value='5-plus') 5+ years
-											option(value='professional') Professional (10+ years)
+											option(value='3-5') 3+ years
+											option(value='Newbie') New at this
 
 									.col-12.col-sm-6
 										label.form-label.fw-semibold(for='description') What best describes you?
-										select#description.form-select(name='description' aria-label='Select what describes you')
+										select#description.form-select(name='description' aria-label='Select what describes you' required)
 											option(selected disabled) Choose...
-											option(value='active-trader') Active trader (retail)
-											option(value='active-investor') Active investor (retail)
+											option(value='active-trader') Active trader investor (retail)
 											option(value='professional') Professional trader/fund manager
 											option(value='new') New to trading/investing
 											option(value='other') Other
 
 									.col-12
 										label.form-label.fw-semibold(for='fitReason') Tell me why you're a good fit
-										textarea#fitReason.form-control(name='fitReason' rows='5' placeholder="Example: I've been trading for 3 years, mostly swing trading tech stocks. I've tracked some insider activity manually but want a more systematic approach. Looking for 3-5 high-conviction ideas per month that I can size properly...")
+										textarea#fitReason.form-control(name='fitReason' rows='5' placeholder="Example: I've been trading for 3 years, mostly swing trading tech stocks. I've tracked some insider activity manually but want a more systematic approach. Looking for 3-5 high-conviction ideas per month that I can size properly..." required)
 
 									.col-12
 										button.btn.btn-primary.w-100.btn-lg(type='submit') Submit Application
 
 							.text-center.mt-4
-								p.fs-9.text-body-tertiary.mb-0 I personally review every application. You'll hear back within 48 hours.
+								p.fs-9.text-body-tertiary.mb-0 I personally review every application. You'll hear from me soon.
 
 						.alert.alert-subtle-success.d-none.m-2.mt-0#insiderFormSuccess
 							h5.fw-bold.mb-1 Thanks!
