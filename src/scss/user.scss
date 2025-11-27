@@ -38,3 +38,10 @@
     line-height: 1.2;
   }
 }
+@media (max-width: 576px) {
+  .cluster-flex p,
+  .cluster-flex h6{
+    font-size: 0.8rem;
+    line-height: 1.2;
+  }
+}

@@ -16,6 +16,7 @@ package-lock.json
 
 # Build outputs #
 #################
+htaccess/
 dist/
 build/
 public/
