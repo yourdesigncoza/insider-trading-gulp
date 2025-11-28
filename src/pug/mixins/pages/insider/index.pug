@@ -16,7 +16,7 @@ mixin InsiderNavbar
 					li.nav-item.border-bottom.border-translucent.border-bottom-lg-0
 						a.nav-link.lh-1.py-0.fs-9.fw-bold.py-3(href='#process') Method
 					li.nav-item
-						a.nav-link.lh-1.py-0.fs-9.fw-bold.py-3(href='#signup') Apply
+						a.nav-link.lh-1.py-0.fs-9.fw-bold.py-3(href='#signup') Join Me
 				.d-grid.d-lg-flex.align-items-center
 					div.nav-item.d-flex.align-items-center.d-none.d-lg-block.pe-2
 						+ToggleThemeBtn('themeControlToggle').px-2
@@ -28,9 +28,11 @@ mixin InsiderHeroHook
 					h1.display-3.fw-black.mb-5.lh-lg People running the company just bought their own stock. #[div.display-3.fw-black.mb-4.lh-sm.text-primary Are you paying attention?]
 					.bg-body-emphasis.rounded-3.p-5.shadow-sm.text-start.mb-5
 						p.fs-7.text-body-secondary.mb-4 Corporate executives see the real numbers before anyone else. When they put #[span.fw-bold.text-primary their own cash] on the line - not options, not bonuses - it means something.
-						.border-start.border-primary.border-3.ps-4.mb-4
-							p.fs-7.fw-semibold.text-body-emphasis.mb-2 We track those moves. You get the trade ideas.
+						.border-start.border-primary.border-3.ps-4.mb-5
+							p.fs-7.fw-semibold.text-body-emphasis.mb-2 We track those moves. You get 1-3 high-conviction insider cluster buy setups per week, not rumours or social media.
 							p.fs-8.mb-0.text-warning-dark No paywall, No subscription.
+						button.btn.btn-primary.btn-lg.me-1.mb-1(href='#signup') Get Your First Setup
+
 mixin Insidersteps
 	section.pb-7.py-lg-8#process
 		.container-small.px-lg-7
@@ -41,21 +43,21 @@ mixin Insidersteps
 						img.mb-4.mx-auto.d-dark-none(src='assets/img/spot-illustrations/13.png', alt='', width='100')
 						img.mb-4.mx-auto.d-light-none(src='assets/img/spot-illustrations/dark_13.png', alt='', width='100')
 						h3.mb-2 Step 1
-						p.mb-0.fs-7 We scan every US Form 4 daily for real insider buying using AI.
+						p.mb-0.fs-8.font-monospace We scan every US Form 4 daily for real insider buying using AI.
 
 				.col-12.col-lg-4.mb-5.mb-lg-0
 					.card.text-center.px-6.py-5.h-100
 						img.mb-4.mx-auto.d-dark-none(src='assets/img/spot-illustrations/14.png', alt='', width='100')
 						img.mb-4.mx-auto.d-light-none(src='assets/img/spot-illustrations/dark_14.png', alt='', width='100')
 						h3.mb-2 Step 2
-						p.mb-0.fs-7 We filter for cluster size, role, and meaningful $ amounts manually.
+						p.mb-0.fs-8.font-monospace We filter for cluster size, role, and meaningful $ amounts manually.
 
 				.col-12.col-lg-4.mb-5.mb-lg-0
 					.card.text-center.px-6.py-5.h-100
 						img.mb-4.mx-auto.d-dark-none(src='assets/img/spot-illustrations/16.png', alt='', width='100')
 						img.mb-4.mx-auto.d-light-none(src='assets/img/spot-illustrations/dark_16.png', alt='', width='100')
 						h3.mb-2 Step 3
-						p.mb-0.fs-7 You get only the best setups with clear context and how I'm trading them.
+						p.mb-0.fs-8.font-monospace You get only the best setups with clear context and how I'm trading them.
 mixin InsiderSubHero
 	section.bg-body-emphasis.pb-7.py-lg-8#insiders
 		.container-small.px-lg-7
@@ -111,13 +113,13 @@ mixin InsiderWhyItWorks
 
 					.d-flex.flex-column.mb-4
 						.d-flex.align-items-center.border-bottom.border-dashed.py-2
-							span.fw-bold.d-inline-flex.align-items-center.justify-content-center.text-primary.bg-primary-subtle(style='border-radius:50%;width:60px;height:60px;flex-shrink:0;') 25.8%
+							span.fs-9.fw-bold.d-inline-flex.align-items-center.justify-content-center.text-primary.bg-primary-subtle(style='border-radius:50%;width:60px;height:60px;flex-shrink:0;') 25.8%
 							.ms-4.text-body-secondary Annualized returns from portfolios built on US Form 4 #[span.typed-text.fw-bold INSIDER BUYS]
 						.d-flex.align-items-center.border-bottom.border-dashed.py-2
-							span.fw-bold.d-inline-flex.align-items-center.justify-content-center.text-success.bg-success-subtle(style='border-radius:50%;width:60px;height:60px;flex-shrink:0;') 4.8%
+							span.fs-9.fw-bold.d-inline-flex.align-items-center.justify-content-center.text-success.bg-success-subtle(style='border-radius:50%;width:60px;height:60px;flex-shrink:0;') 4.8%
 							.ms-4.text-body-secondary Strategies tracking heavy net insider buying outperformed those following heavy selling by 4.8% per year.
 						.d-flex.align-items-center.border-bottom.border-dashed.py-2
-							span.fw-bold.d-inline-flex.align-items-center.justify-content-center.text-warning.bg-warning-subtle(style='border-radius:50%;width:60px;height:60px;flex-shrink:0;') 6-8%
+							span.fs-9.fw-bold.d-inline-flex.align-items-center.justify-content-center.text-warning.bg-warning-subtle(style='border-radius:50%;width:60px;height:60px;flex-shrink:0;') 6-8%
 							.ms-4.text-body-secondary Annual excess returns from open-market insider purchases across decades of US data.
 					h5.mb-5 This isn't a theory. It's been studied, published, and replicated.
 
@@ -152,9 +154,177 @@ mixin InsiderWhyItWorks
 								hr.my-4
 								p.text-body-secondary.fs-9.mb-2 When conviction, allocation size, and timing spike together, we push an alert to the desk and clients immediately.
 								small.text-body-tertiary.fs-10 Data sourced from SEC Form 4 filings & our automated list monitoring.
-																								
+mixin InsiderWhyFree
+	section.bg-body-emphasis.py-7.py-lg-8#why-free
+		.container-small.px-lg-7
+			.row.mb-5
+				.col-12
+					span.badge.bg-primary-subtle.text-primary.fw-bold.mb-3.text-uppercase.fs-9 No Catch
+					h2.fw-black.mb-4 The Same Insider Trade Ideas I Use - Free
+			.row
+				.col-12.col-lg-6
+					div.card.mb-4
+						div.card-header.p-3.py-1.text-bg-secondary.fw-bold.text-uppercase.fs-9(style='padding-top:0.5rem !important;') About Me
+						div.card-body.p-2.px-3
+							.d-flex.flex-1.align-items-center.justify-content-end.gap-3
+								span.d-flex.flex-shrink-0
+									.avatar.avatar-xl
+										img.rounded-circle(src='assets/img/insider-trading/jmm.jpg', alt='John Montgomery')
+								.flex-1.mt-2
+									h4.fs-9.mb-1 John Montgomery
+									p.fs-9.lh-2.mb-0 I'm a trader and AI developer with 10+ years in the markets and 22 years of programming experience. I built this system to filter insider trades for my own portfolio - now I'm sharing what I find.
+					.alert.alert-subtle-primary.fw-semibold.text-center.mb-4(style='border:none;') The only reason this service exists at no cost is because of AI.
+					p.fs-8.text-body-secondary.mb-4 The reality: if you're monitoring Form 4 filings and looking only at US "P" (purchase) codes, you're dealing with around 45,000-50,000 insider trades per year. Obviously, you'd never want to act on all of them. 
+				.col-12.col-lg-6
+					p.fs-8.text-body-secondary.mb-4 What used to require a team of full-time analysts can now be handled by a lean, automated AI research stack. I've developed and continue to maintain proprietary AI models that do the heavy lifting.
+					.alert.alert-subtle-primary.fw-semibold.text-center.mb-4(style='border:none;') You get hedge-fund-style research without paying hedge-fund fees.
+						p.fs-8.text-body-secondary.mb-0.mt-3 As a trader, I need this data and these insider setups for my own decision-making anyway. I'm already doing this research to manage my own portfolio. Sharing the same ideas publicly doesn't cost me anything extra, it just means more eyes and better discussion around the best setups.
+				p.fs-7.fw-bold.text-body-emphasis.mt-5.mb-0.text-center So you're not getting charity. You're getting access to the exact same research I use to trade my own money.
+mixin InsiderEmailSignup
+	section.py-7.py-lg-8#signup
+		.container-small.px-lg-7
+			.row.mb-5
+				.col-12
+					span.badge.bg-primary-subtle.text-primary.fw-bold.mb-3.text-uppercase.fs-9 Member Benefits
+			.row.mb-5.align-items-center
+				.col-12.col-lg-6.mb-5.mb-md-0.px-2.px-lg-10
+					h4.fw-black.mb-4 When You Join, You'll Get:
+					ul.list-unstyled.mb-4.mb-lg-0
+						li.d-flex.align-items-center.mb-3
+							span.fa-solid.fa-check-circle.text-primary.me-3.fs-7
+							p.mb-0 1-3 insider cluster buy setups per week
+						li.d-flex.align-items-center.mb-3
+							span.fa-solid.fa-file-lines.text-success.me-3.fs-7
+							p.mb-0 Each with ticker, insider cluster summary, thesis and rough holding horizon
+						li.d-flex.align-items-center
+							span.fa-solid.fa-crosshairs.text-warning.me-3.fs-7
+							p.mb-0 Exactly what I'm doing with my own money (not theory) 
+
+					h4.fw-black.mb-4.mt-4 What this is NOT:
+					ul.list-unstyled.mb-4.mb-lg-0
+						li.d-flex.align-items-center.mb-3
+							span.fa-solid.fa-check-circle.text-primary.me-3.fs-7
+							p.mb-0 Not a “get rich quick” signal channel
+						li.d-flex.align-items-center.mb-3
+							span.fa-solid.fa-file-lines.text-success.me-3.fs-7
+							p.mb-0 Not options YOLOs
+						li.d-flex.align-items-center
+							span.fa-solid.fa-crosshairs.text-warning.me-3.fs-7
+							p.mb-0 Not backtested fantasy with no real trades
+
+				.col-12.col-lg-6
+					.card.shadow-sm.border
+						.card-body.p-5
+							form#insiderForm(action='https://formspree.io/f/mqaovoag' method='POST')
+								input(type='hidden' name='_subject' value='New Insider Access Request')
+								.row.g-3
+									.col-12
+										label.form-label.fw-semibold(for='firstName') First Name
+										input#firstName.form-control(type='text' name='firstName' placeholder='John' required)
+
+									.col-12
+										label.form-label.fw-semibold(for='emailAddress') Email Address
+										input#emailAddress.form-control(type='email' name='emailAddress' placeholder='name@example.com' required)
+
+									.col-12
+										button.btn.btn-primary.w-100.btn-lg(type='submit') Get Your First Setup
+
+							.text-center.mt-4
+								p.fs-9.text-body-tertiary.mb-0 Get your first cluster buy immediately when you join.
+
+						.alert.alert-subtle-success.d-none.m-2.mt-0#insiderFormSuccess
+							h5.fw-bold.mb-1 Thanks!
+							p.mb-0 The form was submitted successfully.
+						.alert.alert-subtle-danger.d-none.m-2.mt-0#insiderFormError
+							h5.fw-bold.mb-1 Something went wrong
+							p.mb-0 Please try again or email me directly. support@devai.co.za
+
+	//- Inline handler to keep Formspree submission on-page
+	script.
+		(() => {
+			const form = document.getElementById('insiderForm');
+			if (!form) return;
+			const successEl = document.getElementById('insiderFormSuccess');
+			const errorEl = document.getElementById('insiderFormError');
+			form.addEventListener('submit', async (e) => {
+				e.preventDefault();
+				successEl?.classList.add('d-none');
+				errorEl?.classList.add('d-none');
+				if (!form.checkValidity()) {
+					form.reportValidity();
+					return;
+				}
+				try {
+					const res = await fetch(form.action, {
+						method: form.method,
+						headers: { Accept: 'application/json' },
+						body: new FormData(form),
+					});
+					if (res.ok) {
+						form.reset();
+						successEl?.classList.remove('d-none');
+						form.scrollIntoView({ behavior: 'smooth', block: 'start' });
+					} else {
+						throw new Error('Request failed');
+					}
+				} catch (err) {
+					errorEl?.classList.remove('d-none');
+				}
+			});
+		})();
+mixin InsiderWhoJoins
+	section.bg-body-emphasis.py-7.py-lg-8#who-joins
+		.container-small.px-lg-7
+			.row.justify-content-center
+				.col-lg-10.col-xl-9
+					span.badge.bg-warning-subtle.text-warning.fw-bold.mb-3.text-uppercase.fs-9 Are you a good fit?
+					h2.fw-black.mb-4 Why I Care Who Joins.
+					p.fs-8.text-body-secondary.mb-5 Working with #[strong like-minded investors and traders] is one of the biggest edges you can have, my aim is to build out this community so everyone gets value.
+				
+					p.fs-8.text-body-secondary.mb-5.fw-black This might be a good fit for :
+
+					.timeline-vertical.timeline-with-details.mb-5
+
+						.timeline-item.position-relative
+							.row.g-md-3
+								.col-12.col-md-auto.d-flex
+									.timeline-item-bar.position-md-relative.me-3.me-md-0
+										.icon-item.icon-item-md.rounded-7.shadow-none.bg-success-subtle
+											span.text-success.fw-black.fs-8 1
+										//- span.timeline-bar.border-end.border-dashed
+								.col
+									.timeline-item-content.ps-6.ps-md-3
+										h5.fs-7.lh-sm.fw-bold Active investors who want a long-term relationship, not a one-off hit
+										p.text-body-secondary.mb-4 The edge here comes from cycles of ideas → execution → feedback → refinement. If you're just looking for the next "lottery ticket," this isn't for you.
+
+						.timeline-item.position-relative
+							.row.g-md-3
+								.col-12.col-md-auto.d-flex
+									.timeline-item-bar.position-md-relative.me-3.me-md-0
+										.icon-item.icon-item-md.rounded-7.shadow-none.bg-primary-subtle
+											span.text-primary.fw-black.fs-8 2
+										//- span.timeline-bar.border-end.border-dashed
+								.col
+									.timeline-item-content.ps-6.ps-md-3
+										h5.fs-7.lh-sm.fw-bold Independent decision-makers who own their risk
+										p.text-body-secondary.mb-4 This is #[strong not] a signal service. I'm sharing what I'm watching and how I'm thinking about it. You decide what to trade, how to size it, and where your stops go. Your P&L is your responsibility - both the wins and the losses.
+
+						.timeline-item.position-relative
+							.row.g-md-3
+								.col-12.col-md-auto.d-flex
+									.timeline-item-bar.position-md-relative.me-3.me-md-0
+										.icon-item.icon-item-md.rounded-7.shadow-none.bg-warning-subtle
+											span.text-warning.fw-black.fs-8 3
+								.col
+									.timeline-item-content.ps-6.ps-md-3
+										h5.fs-7.lh-sm.fw-bold New to investing?
+										p.text-body-secondary.mb-0 #[strong You're welcome here] - just come ready to learn and own your decisions. Experience isn't required. The right attitude is.
+
+					.alert.alert-subtle-warning.fw-semibold.text-center.mb-4(style='border:none;') If that sounds fair, you're exactly the type of person I want to work with.
+
+					p.text-body-secondary.mb-0 #[strong I don't have 10,000 subscribers] telling you this works. What I have is my own capital on the line - every idea I share is one I'm trading myself.
 mixin InsiderOurEdge
-	section.bg-body-emphasis.py-7.py-lg-8#process
+	section.py-7.py-lg-8#process
 		.container-small.px-lg-7
 			.row.mb-5
 				.col-12
@@ -238,175 +408,12 @@ mixin InsiderOurEdge
 							.col-12.text-center
 								div.border-bottom.border-dashed.mb-4 &nbsp;
 								p.fs-6.text-body-emphasis.mb-0 This isn't about hitting one lucky trade. #[span.fw-bold.text-warning It's about a system that's worked again and again.]
-mixin InsiderWhyFree
-	section.py-7.py-lg-8#why-free
-		.container-small.px-lg-7
-			.row.mb-5
-				.col-12
-					span.badge.bg-primary-subtle.text-primary.fw-bold.mb-3.text-uppercase.fs-9 No Catch
-					h2.fw-black.mb-4 The Same Insider Trade Ideas I Use - Free
-			.row
-				.col-12.col-lg-6
-					div.card.mb-4
-						div.card-header.p-3.py-1.text-bg-secondary.fw-bold.text-uppercase.fs-9(style='padding-top:0.5rem !important;') About Me
-						div.card-body.p-2.px-3
-							.d-flex.flex-1.align-items-center.justify-content-end.gap-3
-								span.d-flex.flex-shrink-0
-									.avatar.avatar-xl
-										img.rounded-circle(src='assets/img/insider-trading/jmm.jpg', alt='John Montgomery')
-								.flex-1.mt-2
-									h4.fs-9.mb-1 John Montgomery
-									p.fs-9.lh-2.mb-0 I'm a trader and AI developer based in South Africa. I built this system to filter insider trades for my own portfolio - now I'm sharing what I find.
-					.alert.alert-subtle-primary.fw-semibold.text-center.mb-4(style='border:none;') The only reason this service exists at no cost is because of AI.
-					p.fs-8.text-body-secondary.mb-4 The reality: if you're monitoring Form 4 filings and looking only at US "P" (purchase) codes, you're dealing with around 45,000-50,000 insider trades per year. Obviously, you'd never want to act on all of them.
-					p.fs-8.text-body-secondary.mb-4 What used to require a team of full-time analysts can now be handled by a lean, automated AI research stack. I've developed and continue to maintain proprietary AI models that do the heavy lifting. 
-				.col-12.col-lg-6
-					.alert.alert-subtle-primary.fw-semibold.text-center.mb-4(style='border:none;') You get hedge-fund-style research without paying hedge-fund fees.
-						p.fs-8.text-body-secondary.mb-0 As a trader, I need this data and these insider setups for my own decision-making anyway. I'm already doing this research to manage my own portfolio. Sharing the same ideas publicly doesn't cost me anything extra, it just means more eyes and better discussion around the best setups.
-				p.fs-7.fw-bold.text-body-emphasis.mt-5.mb-0 So you're not getting charity. You're getting access to the exact same research I use to trade my own money.
-mixin InsiderWhoJoins
-	section.bg-body-emphasis.py-7.py-lg-8#who-joins
-		.container-small.px-lg-7
-			.row.justify-content-center
-				.col-lg-10.col-xl-9
-					span.badge.bg-warning-subtle.text-warning.fw-bold.mb-3.text-uppercase.fs-9 Are you a good fit?
-					h2.fw-black.mb-4 Why I Care Who Joins.
-					p.fs-8.text-body-secondary.mb-5 Working with #[strong like-minded investors and traders] is one of the biggest edges you can have, my aim is to build out this community so everyone gets value.
-				
-					p.fs-8.text-body-secondary.mb-5.fw-black This might be a good fit for :
-
-					.timeline-vertical.timeline-with-details.mb-5
-
-						.timeline-item.position-relative
-							.row.g-md-3
-								.col-12.col-md-auto.d-flex
-									.timeline-item-bar.position-md-relative.me-3.me-md-0
-										.icon-item.icon-item-md.rounded-7.shadow-none.bg-success-subtle
-											span.text-success.fw-black.fs-8 1
-										//- span.timeline-bar.border-end.border-dashed
-								.col
-									.timeline-item-content.ps-6.ps-md-3
-										h5.fs-7.lh-sm.fw-bold Active investors who want a long-term relationship, not a one-off hit
-										p.text-body-secondary.mb-4 The edge here comes from cycles of ideas → execution → feedback → refinement. If you're just looking for the next "lottery ticket," this isn't for you.
-
-						.timeline-item.position-relative
-							.row.g-md-3
-								.col-12.col-md-auto.d-flex
-									.timeline-item-bar.position-md-relative.me-3.me-md-0
-										.icon-item.icon-item-md.rounded-7.shadow-none.bg-primary-subtle
-											span.text-primary.fw-black.fs-8 2
-										//- span.timeline-bar.border-end.border-dashed
-								.col
-									.timeline-item-content.ps-6.ps-md-3
-										h5.fs-7.lh-sm.fw-bold Independent decision-makers who own their risk
-										p.text-body-secondary.mb-4 This is #[strong not] a signal service. I'm sharing what I'm watching and how I'm thinking about it. You decide what to trade, how to size it, and where your stops go. Your P&L is your responsibility - both the wins and the losses.
-
-						.timeline-item.position-relative
-							.row.g-md-3
-								.col-12.col-md-auto.d-flex
-									.timeline-item-bar.position-md-relative.me-3.me-md-0
-										.icon-item.icon-item-md.rounded-7.shadow-none.bg-warning-subtle
-											span.text-warning.fw-black.fs-8 3
-								.col
-									.timeline-item-content.ps-6.ps-md-3
-										h5.fs-7.lh-sm.fw-bold New to investing?
-										p.text-body-secondary.mb-0 #[strong You're welcome here] - just come ready to learn and own your decisions. Experience isn't required. The right attitude is.
-
-					.alert.alert-subtle-warning.fw-semibold.text-center.mb-4(style='border:none;') If that sounds fair, you're exactly the type of person I want to work with.
-
-					p.text-body-secondary.mb-0 #[strong I don't have 10,000 subscribers] telling you this works. What I have is my own capital on the line - every idea I share is one I'm trading myself.
-mixin InsiderEmailSignup
-	section.py-7.py-lg-8#signup
-		.container-small.px-lg-7
-			.row.mb-5
-				.col-12
-					span.badge.bg-primary-subtle.text-primary.fw-bold.mb-3.text-uppercase.fs-9 Member Benefits
-					h2.fw-black.mb-4 When You Join, You'll Get:
-			.row.mb-5.align-items-center
-				.col-12.col-lg-6.mb-5.mb-md-0.px-2.px-lg-10
-
-					ul.list-unstyled.mb-4.mb-lg-0
-						li.d-flex.mb-4
-							span.fa-solid.fa-check-circle.text-primary.me-3.fs-6.mt-1
-							div
-								p 1-3 high-conviction insider setups per week (only when the filters line up)
-
-						li.d-flex.mb-4
-							span.fa-solid.fa-file-lines.text-success.me-3.fs-6.mt-1
-							div
-								p My own trading angle: how I'm sizing it, rough holding horizon, and where I could be wrong.
-
-						li.d-flex
-							span.fa-solid.fa-crosshairs.text-warning.me-3.fs-6.mt-1
-							div
-								p Occasional follow-ups when something important changes (earnings, big price move, insiders buying again).
-
-				.col-12.col-lg-6
-					.card.shadow-sm.border
-						.card-body.p-5
-							form#insiderForm(action='https://formspree.io/f/mqaovoag' method='POST')
-								input(type='hidden' name='_subject' value='New Insider Access Request')
-								.row.g-3
-									.col-12
-										label.form-label.fw-semibold(for='firstName') First Name
-										input#firstName.form-control(type='text' name='firstName' placeholder='John' required)
-
-									.col-12
-										label.form-label.fw-semibold(for='emailAddress') Email Address
-										input#emailAddress.form-control(type='email' name='emailAddress' placeholder='name@example.com' required)
-
-									.col-12
-										button.btn.btn-primary.w-100.btn-lg(type='submit') Get Your First Setup
-
-							.text-center.mt-4
-								p.fs-9.text-body-tertiary.mb-0 Get your first cluster buy immediately when you join.
-
-						.alert.alert-subtle-success.d-none.m-2.mt-0#insiderFormSuccess
-							h5.fw-bold.mb-1 Thanks!
-							p.mb-0 The form was submitted successfully.
-						.alert.alert-subtle-danger.d-none.m-2.mt-0#insiderFormError
-							h5.fw-bold.mb-1 Something went wrong
-							p.mb-0 Please try again or email me directly. support@devai.co.za
-
-	//- Inline handler to keep Formspree submission on-page
-	script.
-		(() => {
-			const form = document.getElementById('insiderForm');
-			if (!form) return;
-			const successEl = document.getElementById('insiderFormSuccess');
-			const errorEl = document.getElementById('insiderFormError');
-			form.addEventListener('submit', async (e) => {
-				e.preventDefault();
-				successEl?.classList.add('d-none');
-				errorEl?.classList.add('d-none');
-				if (!form.checkValidity()) {
-					form.reportValidity();
-					return;
-				}
-				try {
-					const res = await fetch(form.action, {
-						method: form.method,
-						headers: { Accept: 'application/json' },
-						body: new FormData(form),
-					});
-					if (res.ok) {
-						form.reset();
-						successEl?.classList.remove('d-none');
-						form.scrollIntoView({ behavior: 'smooth', block: 'start' });
-					} else {
-						throw new Error('Request failed');
-					}
-				} catch (err) {
-					errorEl?.classList.remove('d-none');
-				}
-			});
-		})();
 mixin InsiderFooter
 	footer.bg-secondary.footer.h-100
 		.row
 			.col-12.text-center.p-3
-				p.mb-1.text-body-quaternary This is not financial advice. I share what I'm personally tracking and trading. You're responsible for your own decisions and risk.
-				p.mb-0.mt-2.mt-sm-0.text-body-quaternary Thank you.
+				p.mb-1(style='color: #cbd0dd;') This is not financial advice. I share what I'm personally tracking and trading. You're responsible for your own decisions and risk.
+				p.mb-0.mt-2.mt-sm-0(style='color: #cbd0dd;') Thank you.
 					span.d-none.d-sm-inline-block
 					span.d-none.d-sm-inline-block.mx-1 |
 					br.d-sm-none 
