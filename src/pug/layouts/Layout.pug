@@ -4,7 +4,7 @@
 block variables
   - var CWD = '';
   - var attrsHtml = { lang: `${ dir === 'rtl' ? 'ar' : 'en-US'}`, dir: dir || 'ltr' };
-  - var title = 'Phoenix';
+  - var title = 'EdenFinTech';
   - var attrsBody = {};
   - var attrsMain = {};
   - var attrsLayout = {};
@@ -70,6 +70,13 @@ html&attributes(attrsHtml)
     //    Main Content
     // ===============================================
     main()&attributes(attrsMain)
+      .alert.alert-subtle-warning.border-0.rounded-0.mb-0.py-3(role='alert')
+        .container-small.px-3.px-lg-7.px-xxl-3
+          .d-flex.flex-column.flex-md-row.align-items-start.align-items-md-center.justify-content-between.gap-2.gap-md-4
+            .d-flex.align-items-start.gap-2
+              span.badge.bg-warning.text-dark.text-uppercase.fs-10 Notice
+              p.mb-0.fw-semibold Still Under Development — content is placeholder/demo only.
+            button.btn-close(type='button', data-bs-dismiss='alert', aria-label='Close')
       //- p=JSON.stringify(pageTree,null,2)
       block mainContent
     // ===============================================

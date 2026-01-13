@@ -1,0 +1,36 @@
+extends ../../layouts/LayoutTheme
+include ../../mixins/pages/insider/index
+include ../../mixins/pages/insider/blog
+
+append variables
+	- var attrsBody = { style: "--phoenix-scroll-margin-top: 1.2rem;"};
+	- var disableNavigationType = true;
+	- var disableVerticalNavbarAppearance = true;
+	- var disableHorizontalNavbarShape = true;
+	- var disableHorizontalNavbarAppearance = true;
+	- var hideSettingPanel = true;
+
+block mainContent
+	+InsiderNavbar
+
+	section.py-6.py-lg-8.bg-body-emphasis
+		.container-small.px-lg-7
+			span.badge.bg-primary-subtle.text-primary.fw-bold.mb-3.text-uppercase.fs-9 Blog
+			h1.display-4.fw-black.mb-3 Insider Intelligence
+			p.text-body-secondary.fs-7.mb-0 Actionable breakdowns of insider cluster buys, execution playbooks, and risk notes. Same research that drives the setups on the main page.
+
+	+InsiderBlogList
+
+	section.py-6.py-lg-8.bg-gray-200
+		.container-small.px-lg-7
+			.card.shadow-sm.border-0
+				.card-body.p-4.p-lg-5.d-flex.flex-column.flex-lg-row.align-items-center.gap-4
+					div.flex-1
+						span.badge.bg-warning-subtle.text-warning.fw-semibold.mb-2 Never miss a setup
+						h3.fw-black.mb-2 Get the next insider alert
+						p.text-body-secondary.mb-0.fs-8 Weekly cluster-buy ideas, same ones I trade. No paywall.
+					div.d-flex.flex-column.flex-sm-row.gap-2.align-items-stretch.align-items-sm-center
+						a.btn.btn-primary.btn-lg.flex-grow-1(href='#signup') Get the next setup
+						a.btn.btn-outline-primary.flex-grow-1(href='/') Back to main page
+
+	+InsiderFooter
